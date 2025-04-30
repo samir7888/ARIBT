@@ -1,12 +1,12 @@
 "use client";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import logo from "../../public/logo.png";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isHover, setIsHover] = useState(false);
   // Toggle mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav
-      style={{ fontFamily: "Noir", zIndex: "100000" }}
+      style={{ fontFamily: "Noir", zIndex: "1000" }}
       className="fixed top-0 left-0 right-0 flex justify-center py-4 px-4"
     >
       <div className="w-full max-w-4xl mx-auto bg-white rounded-full border border-gray-200 h-16 flex items-center  ">
@@ -37,10 +37,14 @@ export default function Navbar() {
             <a href="#" className="text-black  ">
               Home
             </a>
-            <div className="relative group">
+            <div
+              
+              className="relative group"
+            >
               <a href="#" className="text-black font-medium  flex items-center">
                 Products
-                <ChevronDown />
+                <ChevronDown className="group-hover:hidden ml-1  mb-1" />
+                <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
               </a>
               {/* Dropdown for desktop */}
               <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
@@ -72,7 +76,8 @@ export default function Navbar() {
                 className="text-gray-800 font-medium  flex items-center transition-colors"
               >
                 Portfolio
-                <ChevronDown />
+                <ChevronDown className="group-hover:hidden ml-1  mb-1" />
+                <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
               </a>
               {/* Dropdown for desktop */}
               <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
@@ -104,7 +109,8 @@ export default function Navbar() {
                 className="text-gray-800 font-medium flex items-center transition-colors"
               >
                 Why Us
-                <ChevronDown />
+                <ChevronDown className="group-hover:hidden ml-1  mb-1" />
+                <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
               </a>
               {/* Dropdown for desktop */}
               <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
@@ -137,13 +143,13 @@ export default function Navbar() {
 
           {/* Contact Us Button (Desktop) */}
           <button
-            className="hidden md:flex bg-[#04413DCC] text-white  h-13 px-5 items-center  border-1  rounded-full"
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+            className="hidden md:flex bg-[#04413DCC] text-white w-40  h-13 px-5 items-center   rounded-full border hover:pl-8 ease-in-out duration-600 border-brand"
             style={{ fontFamily: "Aeonik" }}
           >
             Contact Us
-            <span>
-              <ChevronRight />
-            </span>
+            <span>{isHover ? "" : <ChevronRight />}</span>
           </button>
 
           {/* Mobile Menu Button */}

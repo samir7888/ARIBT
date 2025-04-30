@@ -70,7 +70,7 @@ const FacilitySection = ({
                 className="bg-cover rounded-xl w-full h-full"
               />{" "}
             </div>
-            <div  className="bg-gray-200 p-3 rounded-xl">
+            <div className="bg-gray-200 p-3 rounded-xl">
               <Image
                 src="https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt=""
@@ -82,7 +82,6 @@ const FacilitySection = ({
           </div>
 
           {/* second row */}
-
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div className="bg-gray-200 p-3 rounded-xl col-span-2">
@@ -137,8 +136,11 @@ const FacilitySection = ({
 
         {/* View All Button */}
         <div className="flex justify-center mt-12">
-          <button className="px-6 py-2 border border-teal-700 text-teal-700 rounded-full hover:bg-teal-700 hover:text-white transition-colors">
+          <button className="group relative overflow-hidden px-6 pt-4 py-4 border border-gray-400 text-brand-primary rounded-full transition-all duration-300">
+            <span className="relative pb-7 z-10 transition-colors duration-300 group-hover:text-white">
             Explorer all
+            </span>
+            <span className="absolute inset-0 z-0 bg-brand-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></span>
           </button>
         </div>
       </section>

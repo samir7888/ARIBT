@@ -64,7 +64,7 @@ const ServicesSection = ({
       />
 
       {/* Services Grid */}
-      <div className="grid grid-rows-5 md:grid-rows-2 gap-14 w-full bg-gradient-to-b from-gray-50 to-transparent">
+      <div className="grid grid-rows-3 md:grid-rows-2 gap-14 w-full bg-gradient-to-b from-gray-50 to-transparent">
         <div className="h-fit grid grid-cols-1 md:grid-cols-2 gap-4 w-full ">
           {/* card */}
           <BorderImage />
@@ -83,8 +83,11 @@ const ServicesSection = ({
 
       {/* View All Button */}
       <div style={{ fontFamily: "Noir" }} className="flex justify-center mt-12">
-        <button className="px-6 pt-4 py-2 border border-gray-400 text-brand-primary rounded-full  ">
-          View all
+        <button className="group relative overflow-hidden px-6 pt-4 py-2 border border-gray-400 text-brand-primary rounded-full transition-all duration-300">
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+            View all
+          </span>
+          <span className="absolute inset-0 z-0 bg-brand-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></span>
         </button>
       </div>
     </section>

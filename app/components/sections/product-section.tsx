@@ -8,13 +8,7 @@ const ProductShowcaseSection: React.FC = () => {
     <>
       <ProductShowcase
         title="Our Products"
-        categories={[
-          "Educational system",
-          "Financial",
-          "Hotel Management",
-          "Enterprise management",
-          "Corporate management",
-        ]}
+       
         products={[
           {
             id: 1,

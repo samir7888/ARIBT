@@ -2,17 +2,12 @@
 import { useState } from "react";
 import { ChevronRight, Box, PieChart, Menu } from "lucide-react";
 import Image from "next/image";
+import Frame from "./filterCard";
 
 // Main product showcase component
 export default function ProductShowcase({
   title = "Our Products",
-  categories = [
-    "Educational system",
-    "Financial",
-    "Hotel Management",
-    "Enterprise management",
-    "Corporate management",
-  ],
+
   products = [
     {
       id: 1,
@@ -52,20 +47,8 @@ export default function ProductShowcase({
       </div>
 
       {/* Filter section */}
-      <div className="flex flex-wrap gap-2 mb-8 justify-between p-1 rounded-3xl mx-auto w-1/2 bg-gray-200">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`px-5 py-3 rounded-full text-[15px] tracking-wide font-normal ${
-              activeCategory === category
-                ? "bg-white text-black"
-                : "bg-gray-200 text-gray-400 "
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+      <div className="flex flex-wrap gap-2 mb-8 justify-between  rounded-4xl mx-auto w-fit relative ">
+        <Frame />
       </div>
 
       {/* Products grid */}
@@ -86,9 +69,11 @@ export default function ProductShowcase({
             </p>
           </div>
           <div className="">
-            <button className="text-xl text-black tracking-widest md:pt-10 font-medium flex">
-              Read more
-              <ChevronRight className="pt-1 w-8 " />
+            <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300">
+              <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300">
+                Read more
+              </span>
+              <ChevronRight className="pt-1 w-8 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
         </div>

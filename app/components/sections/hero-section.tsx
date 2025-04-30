@@ -14,22 +14,36 @@ const HeroSection = () => {
       ></div>
 
       {/* Content */}
-      <div style={{ fontFamily: "Aeonik" }} className="relative z-0 flex flex-col items-center justify-center h-full w-full pt-60 px-4">
+      <div
+        style={{ fontFamily: "Aeonik" }}
+        className="relative z-0 flex flex-col items-center justify-center h-full w-full pt-60 px-4"
+      >
         <div className="w-full md:w-[70%] text-center space-y-6">
-          <h1 style={{  fontSize: 'clamp(2rem, 2.5vw, 4rem)'}} className="w-full  md:w-[90%] mx-auto text-white text-5xl leading-tight font-semibold px-4 tracking-widest">
-            Transforming Challenges Into <span className="block"> Opportunities With Technology</span>
+          <h1
+            style={{ fontSize: "clamp(2rem, 2.5vw, 4rem)" }}
+            className="w-full  md:w-[90%] mx-auto text-white text-5xl leading-tight font-semibold px-4 tracking-widest"
+          >
+            Transforming Challenges Into{" "}
+            <span className="block"> Opportunities With Technology</span>
           </h1>
-          <p  style={{  fontSize: 'clamp(1rem, 1.1vw, 1.2rem)'}} className="w-full md:w-[52%] text-white  mx-auto leading-relaxed tracking-wide">
-            We turn into Opportunities with innovative IT solutions, helping your business thrive and grow in a competetive world
+          <p
+            style={{ fontSize: "clamp(1rem, 1.1vw, 1.2rem)" }}
+            className="w-full md:w-[52%] text-white  mx-auto leading-relaxed tracking-wide"
+          >
+            We turn into Opportunities with innovative IT solutions, helping
+            your business thrive and grow in a competetive world
           </p>
         </div>
 
-        <div  style={{ fontFamily: "Noir" }}    className="flex justify-center mt-4 space-x-3">
-          <button className="px-5 py-3 border bg bg-linear-to-r from-brand-light to-brand pt-5 border-brand text-white flex items-center rounded-full">
+        <div
+          style={{ fontFamily: "Noir" }}
+          className="flex justify-center mt-4 space-x-3"
+        >
+          <button className="px-5 py-3 pt-5 border border-brand bg-gradient-to-r from-brand-light to-brand text-white flex items-center rounded-full transition-all ease-in-out duration-700 hover:bg-gradient-to-l hover:from-brand-light hover:to-brand  ">
             Lets Talk
             <ChevronRight className="mb-1 ml-1 w-3" />
           </button>
-          <button className="px-5 py-2 pt-3 bg-white text-brand-primary rounded-full">
+          <button className="px-5 py-2 pt-4  bg-white text-brand-primary rounded-full hover:text-white hover:bg-brand duration-400 ease-in-out">
             Explore Services
           </button>
         </div>
@@ -40,7 +54,8 @@ const HeroSection = () => {
         </div>
         <div className=" flex text-center  text-white my-4 text-2xl pb-8">
           <h2 style={{ fontFamily: "Aeonik" }}>
-            Powered by <span className="font-semibold tracking-wider">Abhyam Groups</span>
+            Powered by{" "}
+            <span className="font-semibold tracking-wider">Abhyam Groups</span>
           </h2>
         </div>
       </div>

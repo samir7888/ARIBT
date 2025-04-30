@@ -19,8 +19,11 @@ const CaseStudySection = () => {
       </div>
 
       {/* Text Content */}
-      <div style={{ fontFamily: "Aeonik" }} className="w-full md:w-1/2 flex flex-col items-start   justify-between py-3">
-        <div >
+      <div
+        style={{ fontFamily: "Aeonik" }}
+        className="w-full md:w-1/2 flex flex-col items-start   justify-between py-3"
+      >
+        <div>
           <div className="space-y-7">
             <div className=" w-fit text-black tracking-wider rounded-4xl font-normal text-xl border border-gray-300  px-6 py-2 mb-2">
               Case Study
@@ -40,9 +43,11 @@ const CaseStudySection = () => {
             </p>
           </div>
           <div className="">
-            <button className="text-xl text-black tracking-widest md:pt-10 font-medium flex">
-              Read more 
-              <ChevronRight className="pt-1 w-8 "/>
+            <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300">
+              <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300">
+                Read more
+              </span>
+              <ChevronRight className="pt-1 w-8 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
         </div>
@@ -55,13 +60,14 @@ const CaseStudySection = () => {
           </div>
           <div className="flex flex-col text-center justify-center">
             <p className="font-semibold tracking-wider">2456+</p>
-            <p className="text-sm tracking-wider text-gray-400">Transaction volumes</p>
+            <p className="text-sm tracking-wider text-gray-400">
+              Transaction volumes
+            </p>
           </div>
           <div className="flex flex-col text-center justify-center">
             <p className="font-semibold tracking-wider">157M+</p>
             <p className="text-sm tracking-wider text-gray-400">Transaction</p>
           </div>
-         
         </div>
       </div>
     </div>

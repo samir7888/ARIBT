@@ -1,5 +1,4 @@
 import HeroSection from "./components/sections/hero-section";
-import Navbar from "@/components/Header/Navbar";
 import CaseStudySection from "./components/sections/case-section";
 import DivideSection from "./components/sections/divide-section";
 import MiddleSection from "./components/sections/service-section";
@@ -9,6 +8,7 @@ import FacilitySection from "./components/sections/work-section";
 import TeamSection from "./components/sections/team-section";
 import TestimonialSection from "./components/sections/testimonials";
 import BlogSection from "./components/sections/blog-section";
+import Navbar from "../components/Header/Navbar";
 export default function Home() {
   return (
     <div className="relative   min-h-screen mx-auto">
