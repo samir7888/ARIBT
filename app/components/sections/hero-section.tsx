@@ -1,0 +1,51 @@
+import React from "react";
+import hero from "../../../public/hero.png";
+import Image from "next/image";
+import photo1 from "../../../public/Property 1=Variant2.png";
+import { ChevronRight } from "lucide-react";
+
+const HeroSection = () => {
+  return (
+    <div className="relative min-h-screen w-full">
+      {/* Background image - fixed to cover entire section */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat "
+        style={{ backgroundImage: `url(${hero.src})` }}
+      ></div>
+
+      {/* Content */}
+      <div style={{ fontFamily: "Aeonik" }} className="relative z-0 flex flex-col items-center justify-center h-full w-full pt-60 px-4">
+        <div className="w-full md:w-[70%] text-center space-y-6">
+          <h1 style={{  fontSize: 'clamp(2rem, 2.5vw, 4rem)'}} className="w-full  md:w-[90%] mx-auto text-white text-5xl leading-tight font-semibold px-4 tracking-widest">
+            Transforming Challenges Into <span className="block"> Opportunities With Technology</span>
+          </h1>
+          <p  style={{  fontSize: 'clamp(1rem, 1.1vw, 1.2rem)'}} className="w-full md:w-[52%] text-white  mx-auto leading-relaxed tracking-wide">
+            We turn into Opportunities with innovative IT solutions, helping your business thrive and grow in a competetive world
+          </p>
+        </div>
+
+        <div  style={{ fontFamily: "Noir" }}    className="flex justify-center mt-4 space-x-3">
+          <button className="px-5 py-3 border bg bg-linear-to-r from-brand-light to-brand pt-5 border-brand text-white flex items-center rounded-full">
+            Lets Talk
+            <ChevronRight className="mb-1 ml-1 w-3" />
+          </button>
+          <button className="px-5 py-2 pt-3 bg-white text-brand-primary rounded-full">
+            Explore Services
+          </button>
+        </div>
+
+        {/* Image */}
+        <div className="container mx-auto flex justify-center mt-8 ">
+          <Image src={photo1} alt="Hero Image" width={1600} height={800} />
+        </div>
+        <div className=" flex text-center  text-white my-4 text-2xl pb-8">
+          <h2 style={{ fontFamily: "Aeonik" }}>
+            Powered by <span className="font-semibold tracking-wider">Abhyam Groups</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;
