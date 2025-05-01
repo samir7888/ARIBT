@@ -1,6 +1,7 @@
 import React from "react";
 import TitleCard from "../cards/titleCard";
 import Image from "next/image";
+import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
 
 const FacilitySection = ({
   sectionTitle = "Our Recent Works",
@@ -137,15 +138,8 @@ const FacilitySection = ({
           </div>
         </div>
 
-        {/* View All Button */}
-        <div className="flex justify-center mt-12">
-          <button className="group relative overflow-hidden px-6 pt-4 py-4 border border-gray-400 text-brand-primary rounded-full transition-all duration-300">
-            <span className="relative pb-7 z-10 transition-colors duration-300 group-hover:text-white">
-            Explorer all
-            </span>
-            <span className="absolute inset-0 z-0 bg-brand-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></span>
-          </button>
-        </div>
+        {/*  Explorer all Button */}
+        <ButtonEffect1 word="Explorer All"/>
       </section>
     </div>
   );

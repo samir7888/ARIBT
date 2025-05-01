@@ -1,15 +1,13 @@
 import React from "react";
 import TitleCard from "../cards/titleCard";
 import Image from "next/image";
+import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
 
 const ServicesSection = ({
   sectionTitle = "What we Offer?",
   sectionSubtitle = "Focus your attention on developing your business, and let us work for your overall school management headache",
   services = [],
 }) => {
- 
- 
-
   return (
     <section className="py-16 z-0 px-4 container mx-auto ">
       {/* Section Header */}
@@ -38,14 +36,7 @@ const ServicesSection = ({
       </div>
 
       {/* View All Button */}
-      <div style={{ fontFamily: "Noir" }} className="flex justify-center mt-12">
-        <button className="group relative overflow-hidden px-6 pt-4 py-2 border border-gray-400 text-brand-primary rounded-full transition-all duration-300">
-          <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-            View all
-          </span>
-          <span className="absolute inset-0 z-0 bg-brand-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></span>
-        </button>
-      </div>
+      <ButtonEffect1 word="View All" />
     </section>
   );
 };
