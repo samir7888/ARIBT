@@ -59,51 +59,54 @@ const FacilitySection = ({
         />
 
         {/* Grid */}
-        <div className="grid grid-rows-7 md:grid-rows-3  gap-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="bg-gray-200 p-3 rounded-xl">
+        <div className="grid grid-rows-7  md:grid-rows-3 gap-5 h-fit">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-full">
+
+            
+            <div className="bg-gray-200 p-3 rounded-xl h-full">
               <Image
                 src="https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt=""
                 width={1200}
                 height={600}
-                className="bg-cover rounded-xl w-full h-full"
+                className="bg-cover rounded-xl w-full h-full "
               />{" "}
             </div>
-            <div className="bg-gray-200 p-3 rounded-xl">
+            <div className="bg-gray-200 p-3 rounded-xl h-full">
               <Image
                 src="https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt=""
                 width={1200}
                 height={600}
                 className="bg-cover w-full h-full"
-              />{" "}
+              />
             </div>
           </div>
 
           {/* second row */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <div className="bg-gray-200 p-3 rounded-xl col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-fit">
+            <div className="bg-gray-200 p-3 rounded-xl col-span-2 ">
               <Image
                 src="https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt=""
                 width={1200}
                 height={600}
-                className="bg-cover "
+                className="bg-cover  w-full h-full"
               />
             </div>
-            <div className="bg-gray-200 p-3 rounded-xl">
+            <div className="bg-gray-200 p-3 rounded-xl h-full">
               <Image
                 src="https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt=""
                 width={1200}
                 height={600}
-                className="bg-cover w-full h-full"
+                className="bg-cover w-full h-full "
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {/* Third row */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-full">
             <div className="bg-gray-200 p-3 rounded-xl">
               <Image
                 src="https://images.pexels.com/photos/4512439/pexels-photo-4512439.jpeg?auto=compress&cs=tinysrgb&w=600"

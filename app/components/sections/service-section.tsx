@@ -1,5 +1,4 @@
 import React from "react";
-import ServiceCard from "../cards/serviceCard";
 import TitleCard from "../cards/titleCard";
 import Image from "next/image";
 
@@ -8,51 +7,8 @@ const ServicesSection = ({
   sectionSubtitle = "Focus your attention on developing your business, and let us work for your overall school management headache",
   services = [],
 }) => {
-  // Default services if none provided
-  const defaultServices = [
-    {
-      id: 1,
-      title: "Website Design and Development",
-      description:
-        "We design and develop first class website for any it business incluind crms and customization at the top level",
-      imageSrc: "/images/website-design.jpg",
-      imageAlt: "Website design example",
-    },
-    {
-      id: 2,
-      title: "Digital Marketing and SEO",
-      description:
-        "We design and develop first class website for any it business incluind crms and customization at the top level",
-      imageSrc: "/images/digital-marketing.jpg",
-      imageAlt: "Digital marketing example",
-    },
-    {
-      id: 3,
-      title: "Mobile app Development",
-      description:
-        "We design and develop first class website for any it business incluind",
-      imageSrc: "/images/mobile-app.jpg",
-      imageAlt: "Mobile app example",
-    },
-    {
-      id: 4,
-      title: "Wordpress Development",
-      description:
-        "We design and develop first class website for any it business incluind",
-      imageSrc: "/images/wordpress.jpg",
-      imageAlt: "Wordpress example",
-    },
-    {
-      id: 5,
-      title: "Ecommerce solutions",
-      description:
-        "We design and develop first class website for any it business incluind",
-      imageSrc: "/images/ecommerce.jpg",
-      imageAlt: "Ecommerce example",
-    },
-  ];
-
-  const displayServices = services.length > 0 ? services : defaultServices;
+ 
+ 
 
   return (
     <section className="py-16 z-0 px-4 container mx-auto ">
