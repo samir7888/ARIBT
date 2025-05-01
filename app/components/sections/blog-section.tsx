@@ -138,11 +138,15 @@ const BlogSection = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-10">
-        <button className="px-4 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition">
-          View all
-        </button>
-      </div>
+      {/* View All Button */}
+      <div className="flex justify-center mt-12">
+          <button className="group relative overflow-hidden px-6 pt-2 py-2 border border-gray-400 text-brand-primary rounded-full transition-all duration-300">
+            <span className="relative pb-7 z-10 transition-colors duration-300 group-hover:text-white">
+            View all
+            </span>
+            <span className="absolute inset-0 z-0 bg-brand-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></span>
+          </button>
+        </div>
     </section>
   )
 }

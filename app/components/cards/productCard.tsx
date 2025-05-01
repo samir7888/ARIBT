@@ -47,7 +47,7 @@ export default function ProductShowcase({
       </div>
 
       {/* Filter section */}
-      <div className="flex flex-wrap gap-2 mb-8 justify-between  rounded-4xl mx-auto w-fit relative ">
+      <div className="flex flex-wrap gap-2 mb-8 justify-between  rounded-4xl mx-auto w-fit relative z-0 ">
         <Frame />
       </div>
 

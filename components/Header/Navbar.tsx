@@ -14,8 +14,8 @@ export default function Navbar() {
 
   return (
     <nav
-      style={{ fontFamily: "Noir", zIndex: "1000" }}
-      className="fixed top-0 left-0 right-0 flex justify-center py-4 px-4"
+      style={{ fontFamily: "Noir", zIndex: "1000 !important"}}
+      className="fixed top-0   left-0 right-0 flex justify-center py-4 px-4"
     >
       <div className="w-full max-w-4xl mx-auto bg-white rounded-full border border-gray-200 h-16 flex items-center  ">
         <div className="w-full p-3 flex justify-between items-center">
