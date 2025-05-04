@@ -9,6 +9,7 @@ import TeamSection from "./components/sections/team-section";
 import TestimonialSection from "./components/sections/testimonials";
 import BlogSection from "./components/sections/blog-section";
 import Navbar from "../components/Header/Navbar";
+import FooterSection from "../components/Footer/FooterSection";
 export default function Home() {
   return (
     <div className="relative   min-h-screen mx-auto">
@@ -32,6 +33,7 @@ export default function Home() {
       <TeamSection />
       <TestimonialSection />
       <BlogSection />
+      <FooterSection />
     </div>
   );
 }

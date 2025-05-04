@@ -39,11 +39,12 @@ const HeroSection = () => {
           style={{ fontFamily: "Noir" }}
           className="flex justify-center mt-4 space-x-3"
         >
-          <button className="px-5 py-3 pt-5 border border-brand bg-gradient-to-r from-brand-light to-brand text-white flex items-center rounded-full transition-all ease-in-out duration-700 hover:bg-gradient-to-l hover:from-brand-light hover:to-brand  ">
+          <button className="px-5 py-3 pt-5 border border-brand bg-gradient-to-r from-brand-light to-brand text-white flex items-center rounded-full transition-all duration-700 ease-in-out hover:bg-gradient-to-l hover:from-brand-light hover:to-brand">
             Lets Talk
             <ChevronRight className="mb-1 ml-1 w-3" />
           </button>
-          <button className="px-5 py-2 pt-4  bg-white text-brand-primary rounded-full hover:text-white hover:bg-brand duration-400 ease-in-out">
+
+          <button className="px-5 py-2 pt-4 bg-white text-brand-primary rounded-full transition-colors duration-400 ease-in-out hover:text-white hover:bg-brand">
             Explore Services
           </button>
         </div>
