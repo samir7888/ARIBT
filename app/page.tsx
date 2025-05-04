@@ -6,7 +6,7 @@ import MiddleSection from "./components/sections/service-section";
 import ProductShowcaseSection from "./components/sections/product-section";
 import FacilitySection from "./components/sections/work-section";
 import TeamSection from "./components/sections/team-section";
-import TestimonialSection from "./components/sections/testimonials";
+import TestimonialSection from "./components/sections/testimonials-section";
 import BlogSection from "./components/sections/blog-section";
 import Navbar from "../components/Header/Navbar";
 import FooterSection from "../components/Footer/FooterSection";
