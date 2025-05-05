@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-full -mt-[100px]">
       {/* Background image - fixed to cover entire section */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat "

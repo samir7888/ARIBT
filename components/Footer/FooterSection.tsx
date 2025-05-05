@@ -1,11 +1,13 @@
 import React from "react";
 import FAQ from "./FaqSection";
+import FooterCard from "./FooterCard";
 
 const FooterSection = () => {
   return (
-    <div   style={{ fontFamily: "Aeonik" }} className=" bg-gradient-to-r from-brand-light to-brand pt-10 ">
-      <div className="w-full px-2 mx-auto container md:w-1/2">
+    <div className="font-aeonik bg-gradient-to-r from-brand-light to-brand-primary pt-10 ">
+      <div className="w-full px-2 mx-auto container md:w-3/4">
         <FAQ />
+        <FooterCard />
       </div>
     </div>
   );

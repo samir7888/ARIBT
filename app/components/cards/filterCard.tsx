@@ -10,7 +10,6 @@ const tabs = [
   "Corporate management",
 ];
 
-
 export default function Frame() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -56,9 +55,7 @@ export default function Frame() {
   }, []);
 
   return (
-    <Card
-      className={'p-1 rounded-full  tracking-wide font-normal bg-gray-200' }
-    >
+    <Card className={"p-1 rounded-full tracking-wide font-normal bg-gray-200"}>
       <CardContent className="p-0">
         <div className="relative">
           {/* Hover Highlight */}
@@ -71,7 +68,7 @@ export default function Frame() {
           />
 
           {/* Tabs */}
-          <div className="relative flex space-x-[6px] items-center">
+          <div className="relative  flex space-x-[6px] items-center">
             {tabs.map((tab, index) => (
               <div
                 key={index}
@@ -80,14 +77,14 @@ export default function Frame() {
                 }}
                 className={`p-6 font-medium cursor-pointer rounded-3xl tracking-wide  transition-colors duration-300 h-[30px] ${
                   index === activeIndex
-                    ? "bg-white text-black"
+                    ? "bg-white text-black "
                     : "text-gray-400"
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => setActiveIndex(index)}
               >
-                <div className="text-sm font-[var(--www-mattmannucci-me-geist-regular-font-family)] leading-5 whitespace-nowrap flex items-center justify-center h-full">
+                <div className="text-sm leading-5 whitespace-nowrap flex items-center justify-center h-full">
                   {tab}
                 </div>
               </div>

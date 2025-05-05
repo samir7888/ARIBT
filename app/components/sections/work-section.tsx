@@ -60,7 +60,7 @@ const FacilitySection = ({
         />
 
         {/* Grid */}
-        <div className="grid grid-rows-7  md:grid-rows-3 gap-5 h-fit">
+        <div className="grid grid-rows-1  md:grid-rows-3 gap-5 h-fit">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-full">
 
             

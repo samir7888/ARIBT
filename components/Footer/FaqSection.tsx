@@ -40,7 +40,7 @@ const FAQ = () => {
     setOpenQuestion(openQuestion === id ? null : id);
   };
   return (
-    <div className="max-w-4xl pt-5 mx-auto text-white">
+    <div className="w-full pt-5 mx-auto text-white">
       <div className="space-y-4">
         <h2  style={{ fontSize: "clamp(2rem, 2.5vw, 4rem)" }} className=" font-semibold tracking-wider">Frequently Asked Questions</h2>
         <p  style={{ fontSize: "clamp(0.8rem, 0.9vw, 2rem)" }} className="text-gray-300 tracking-wide">Things i often get asked, or you can know more about me.</p>

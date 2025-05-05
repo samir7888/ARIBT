@@ -3,7 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 
 const TestimonialCard = () => (
     <section
-          className=" p-[1px] rounded-2xl  pause-on-hover "
+          className=" p-[1px] rounded-2xl  "
           style={{
             background:
               "linear-gradient(to bottom, var(--color-gray-100), transparent)",
