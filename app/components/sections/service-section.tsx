@@ -83,7 +83,7 @@ function BorderImage() {
           </h2>
           <p
             className="text-gray-500 tracking-wide pb-4"
-            style={{ fontSize: "clamp(0.7rem, 1.1vw, 1.4rem)" }}
+            style={{ fontSize: "clamp(0.9rem, 1.1vw, 1.4rem)" }}
           >
             We design and developed first class website for any it business
             include crms

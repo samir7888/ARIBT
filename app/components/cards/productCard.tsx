@@ -47,7 +47,7 @@ export default function ProductShowcase({
       </div>
 
       {/* Filter section */}
-      <div className="flex flex-wrap gap-2 mb-8 justify-between  rounded-4xl mx-auto w-fit  -z-10 ">
+      <div className="hidden md:flex container  flex-wrap gap-2 mb-8   rounded-4xl mx-auto w-fit  -z-10 ">
         <Frame />
       </div>
 
@@ -61,7 +61,7 @@ export default function ProductShowcase({
             </h2>
             <p
               className="text-gray-400"
-              style={{ fontSize: "clamp(0.7rem, 1vw, 1.5rem)" }}
+              style={{ fontSize: "clamp(0.9rem, 1vw, 1.5rem)" }}
             >
               Mark and track attendance digitally with a single click. Notify
               parents instantly about absences and generate attendance reports

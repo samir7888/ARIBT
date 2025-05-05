@@ -71,7 +71,7 @@ const TeamSection = () => {
           <BorderImage />
           <BorderImage />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 h-fit w-fit mx-auto gap-8">
+        <div className=" grid grid-cols-2 md:grid-cols-3 h-fit w-fit mx-auto gap-8">
           <BorderImage />
           <BorderImage />
           <BorderImage />
@@ -96,7 +96,7 @@ function BorderImage() {
         className="bg-white flex flex-col"
         style={{ borderRadius: "calc(var(--radius-3xl) - 1px)" }}
       >
-        <div className="h-52 w-64 overflow-hidden bg-linear-to-b from-gray-100 to-white rounded-2xl">
+        <div className="max-h-52 max-w-64 overflow-hidden bg-linear-to-b from-gray-100 to-white rounded-2xl">
           <Image
             src="https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt=""

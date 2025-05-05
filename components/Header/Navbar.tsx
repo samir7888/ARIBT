@@ -133,7 +133,7 @@ export default function Navbar() {
 
           {/* Contact Us Button (Desktop) */}
           <button
-            className="hidden group md:flex bg-brand text-white w-40  h-13 px-5 items-center   rounded-full border hover:pl-8 ease-in-out duration-600 border-brand"
+            className="hidden group md:flex bg-brand text-white max-w-40  h-13 px-5 items-center   rounded-full border hover:pl-8 ease-in-out duration-600 border-brand"
             style={{ fontFamily: "Aeonik" }}
           >
             Contact Us

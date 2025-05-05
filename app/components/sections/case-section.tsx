@@ -53,7 +53,7 @@ const CaseStudySection = () => {
         </div>
 
         {/* stats */}
-        <div className="flex w-full mt-10 justify-around px-5 text-3xl ">
+        <div className="flex w-full mt-10 justify-around px-5 text-xl md:text-3xl ">
           <div className="flex flex-col text-center justify-center">
             <p className="font-semibold tracking-wider">2456+</p>
             <p className="text-sm tracking-wider text-gray-400">Business</p>

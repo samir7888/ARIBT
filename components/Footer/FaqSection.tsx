@@ -1,6 +1,10 @@
-'use client'
-import { ChevronDown, ChevronUp } from "lucide-react";
-import React, { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/components/ui/accordion";
+
 const faqData = [
   {
     id: "1",
@@ -35,53 +39,31 @@ const faqData = [
 ];
 
 const FAQ = () => {
-  const [openQuestion, setOpenQuestion] = useState<string | null>("");
-  const toggleQuestion = (id: string) => {
-    setOpenQuestion(openQuestion === id ? null : id);
-  };
   return (
     <div className="w-full pt-5 mx-auto text-white">
       <div className="space-y-4">
-        <h2  style={{ fontSize: "clamp(2rem, 2.5vw, 4rem)" }} className=" font-semibold tracking-wider">Frequently Asked Questions</h2>
-        <p  style={{ fontSize: "clamp(0.8rem, 0.9vw, 2rem)" }} className="text-gray-300 tracking-wide">Things i often get asked, or you can know more about me.</p>
+        <h2
+          style={{ fontSize: "clamp(1.5rem, 2.5vw, 4rem)" }}
+          className=" font-semibold tracking-wider"
+        >
+          Frequently Asked Questions
+        </h2>
+        <p
+          style={{ fontSize: "clamp(0.8rem, 0.9vw, 2rem)" }}
+          className="text-gray-300 tracking-wide"
+        >
+          Things i often get asked, or you can know more about me.
+        </p>
       </div>
-      {faqData.length > 0 ? (
-        faqData.map((faq) => (
-          <div
-            key={faq.id}
-            className="pt-3"
-          >
-            <button
-              className="w-full text-left flex py-4 justify-between items-center focus:outline-none border-b border-gray-100"
-              onClick={() => toggleQuestion(faq.id)}
-            >
-              <h3  style={{ fontSize: "clamp(0.9rem, 1vw, 1.8rem)" }}  className="text-lg tracking-wide  ">
-                {faq.question}
-              </h3>
-              {openQuestion === faq.id ? (
-                <ChevronUp className="flex-shrink-0 " size={20} />
-              ) : (
-                <ChevronDown
-                  className="flex-shrink-0 "
-                  size={20}
-                />
-              )}
-            </button>
 
-            {openQuestion === faq.id && (
-              <div className="p-3  ">
-                <p   style={{ fontSize: "clamp(0.8rem, 0.9vw, 1.8rem)" }} className="">{faq.answer}</p>
-              </div>
-            )}
-          </div>
-        ))
-      ) : (
-        <div className="text-center py-10">
-          <p className="text-gray-500">
-            No questions found matching your criteria.
-          </p>
-        </div>
-      )}
+      <Accordion type="single" collapsible className="w-full">
+        {faqData.map((faq) => (
+          <AccordionItem key={faq.id} value={faq.id}>
+            <AccordionTrigger style={{ fontSize: "clamp(1rem, 1.2vw, 2rem)" }}>{faq.question}</AccordionTrigger>
+            <AccordionContent style={{ fontSize: "clamp(0.8rem, 1vw, 1.8rem)" }}  className=" text-gray-300">{faq.answer}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
   );
 };
