@@ -6,7 +6,7 @@ import BlogHeroSection from "./components/BlogHeroSection"
 const page = () => {
   return (
     <div className="min-h-screen mx-auto">
-            <BlogHeroSection/>
+            <BlogHeroSection title="BLOGS"/>
             <BlogFilter />
             <FooterSection />
     </div>
