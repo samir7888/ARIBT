@@ -6,8 +6,10 @@
 @theme {
   --color-brand: #04413DCC;
   --color-brand-light: #069188;
-  --color-brand-primary: #04413d;
-  --font-aeonik: "Aeonik", "sans-serif"
+  --color-brand-footer-left: #07827A;
+  --color-brand-primary: #04413D;
+  --font-aeonik: "Aeonik", "sans-serif";
+  --font-noir: "Noir", "sans-serif"
 }
 
 @font-face {

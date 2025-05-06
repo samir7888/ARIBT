@@ -27,108 +27,108 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex mt-2 items-center space-x-8 text-xl">
-            <a href="/" className="text-black  ">
+            <Link href="/" className="text-black  ">
               Home
-            </a>
+            </Link>
             <div className="relative group">
-              <a href="#" className="text-black font-medium  flex items-center">
+              <Link href="#" className="text-black font-medium  flex items-center">
                 Products
                 <ChevronDown className="group-hover:hidden ml-1  mb-1" />
                 <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
-              </a>
+              </Link>
               {/* Dropdown for desktop */}
               <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="py-1">
-                  <a
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Product 1
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Product 2
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Product 3
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="relative group">
-              <a
+              <Link
                 href="#"
                 className="text-gray-800 font-medium  flex items-center transition-colors"
               >
                 Portfolio
                 <ChevronDown className="group-hover:hidden ml-1  mb-1" />
                 <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
-              </a>
+              </Link>
               {/* Dropdown for desktop */}
               <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="py-1">
-                  <a
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Project 1
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Project 2
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Project 3
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="relative group">
-              <a
+              <Link
                 href="#"
                 className="text-gray-800 font-medium flex items-center transition-colors"
               >
                 Why Us
                 <ChevronDown className="group-hover:hidden ml-1  mb-1" />
                 <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
-              </a>
+              </Link>
               {/* Dropdown for desktop */}
               <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="py-1">
-                  <a
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Our Vision
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Our Team
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Testimonials
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
-            <a href="/blogs" className="text-gray-800 font-medium ">
+            <Link href="/blogs" className="text-gray-800 font-medium ">
               Blogs
-            </a>
+            </Link>
           </div>
 
           {/* Contact Us Button (Desktop) */}

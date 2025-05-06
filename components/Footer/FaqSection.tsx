@@ -41,7 +41,7 @@ const faqData = [
 const FAQ = () => {
   return (
     <div className="w-full pt-5 mx-auto text-white">
-      <div className="space-y-4">
+      <div className="space-y-3">
         <h2
           style={{ fontSize: "clamp(1.5rem, 2.5vw, 4rem)" }}
           className=" font-semibold tracking-wider"
@@ -50,13 +50,13 @@ const FAQ = () => {
         </h2>
         <p
           style={{ fontSize: "clamp(0.8rem, 0.9vw, 2rem)" }}
-          className="text-gray-300 tracking-wide"
+          className="text-gray-200 tracking-wide"
         >
           Things i often get asked, or you can know more about me.
         </p>
       </div>
 
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="single" collapsible className="w-full mt-8">
         {faqData.map((faq) => (
           <AccordionItem key={faq.id} value={faq.id}>
             <AccordionTrigger style={{ fontSize: "clamp(1rem, 1.2vw, 2rem)" }}>{faq.question}</AccordionTrigger>
