@@ -11,7 +11,7 @@ import Navbar from "../components/Header/Navbar";
 import FooterSection from "../components/Footer/FooterSection";
 export default function Home() {
   return (
-    <div className="relative   min-h-screen mx-auto">
+    <div className="relative  min-h-screen mx-auto">
       {/* hero section */}
       <HeroSection />
       <CaseStudySection />

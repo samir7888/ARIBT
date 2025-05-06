@@ -15,6 +15,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div
+      
         style={{ fontFamily: "Aeonik" }}
         className="relative z-0 flex flex-col items-center justify-center h-full w-full pt-60 px-4"
       >

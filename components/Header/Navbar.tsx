@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="w-full p-3 flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="#" className="text-lg font-bold ">
+            <Link href="/" className="text-lg font-bold ">
               <Image
                 src={logo}
                 width={70}
@@ -27,7 +27,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex mt-2 items-center space-x-8 text-xl">
-            <a href="#" className="text-black  ">
+            <a href="/" className="text-black  ">
               Home
             </a>
             <div className="relative group">
@@ -126,15 +126,15 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-            <a href="#" className="text-gray-800 font-medium ">
+            <a href="/blogs" className="text-gray-800 font-medium ">
               Blogs
             </a>
           </div>
 
           {/* Contact Us Button (Desktop) */}
           <button
-            className="hidden group md:flex bg-brand text-white max-w-40  h-13 px-5 items-center   rounded-full border hover:pl-8 ease-in-out duration-600 border-brand"
-            style={{ fontFamily: "Aeonik" }}
+            className="hidden group md:flex bg-brand text-white w-40  h-13 px-5 items-center  rounded-full border hover:pl-8  duration-600 border-brand font-aeonik"
+            
           >
             Contact Us
             <ChevronRight className="group-hover:hidden" />

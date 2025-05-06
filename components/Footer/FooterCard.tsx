@@ -7,7 +7,7 @@ const FooterCard = () => {
     <div className="relative bg-white h-[600px] px-0 md:px-4 mt-28 rounded-t-3xl flex flex-col justify-between ">
       {/* Background image - fixed to cover entire section */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-5 "
+        className="absolute inset-0 w-full   bg-cover bg-center bg-no-repeat opacity-5 "
         style={{ backgroundImage: `url(${logo.src})` }}
       ></div>
 
