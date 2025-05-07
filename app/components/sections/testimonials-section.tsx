@@ -11,8 +11,19 @@ const testimonials = () => {
         sectionTitle="What our Client Says?"
       />
 
-      {/* Gradient shadows */}
-      <div className="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-gray-50 to-transparent z-20" />
+     <Testimonials />
+    </div>
+  );
+};
+
+export default testimonials;
+
+
+
+export function Testimonials(){
+  return <>
+   {/* Gradient shadows */}
+   <div className="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-gray-50 to-transparent z-20" />
       <div className="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-gray-50 to-transparent z-20" />
 
       {/* Row 1 - Left to Right */}
@@ -40,8 +51,5 @@ const testimonials = () => {
           ))}
         </div>
       </div>
-    </div>
-  );
-};
-
-export default testimonials;
+  </>
+}

@@ -82,7 +82,7 @@ const NavLinks = () => {
       <div className="relative group">
         <Link
           href="#"
-          className="text-gray-800 font-medium flex items-center transition-colors"
+          className="text-gray-800 font-medium flex items-center transition-colors "
         >
           Why Us
           <ChevronDown className="group-hover:hidden ml-1  mb-1" />
@@ -98,13 +98,13 @@ const NavLinks = () => {
               Our Vision
             </Link>
             <Link
-              href="#"
+              href="/teams"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
               Our Team
             </Link>
             <Link
-              href="#"
+              href="/testimonials"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
               Testimonials
