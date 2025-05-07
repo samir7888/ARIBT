@@ -48,7 +48,7 @@ const NavLinks = () => {
       </div>
       <div className="relative group">
         <Link
-          href="#"
+          href="/portfolio"
           className="text-gray-800 font-medium  flex items-center transition-colors"
         >
           Portfolio
