@@ -10,7 +10,7 @@ const tabs = [
   "Corporate management",
 ];
 
-export default function Frame() {
+export default function Frame({isProduct}:{isProduct?:boolean}) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoverStyle, setHoverStyle] = useState({});
@@ -55,12 +55,12 @@ export default function Frame() {
   }, []);
 
   return (
-    <Card className={"p-1 rounded-full tracking-wide font-normal bg-gray-200"}>
+    <Card className={`p-1 rounded-full tracking-wide font-normal  ${isProduct ? "bg-brand-primary":"bg-gray-200"}`}>
       <CardContent className="p-0">
         <div className="relative">
           {/* Hover Highlight */}
           <div
-            className="absolute h-[30px] transition-all duration-300 ease-out p-6  bg-white rounded-3xl flex items-center"
+            className="absolute h-[30px]  transition-all duration-300 ease-out p-6  bg-white rounded-3xl flex items-center"
             style={{
               ...hoverStyle,
               opacity: hoveredIndex !== null ? 1 : 0,
@@ -78,7 +78,7 @@ export default function Frame() {
                 className={`p-6 font-medium cursor-pointer rounded-3xl tracking-wide  transition-colors duration-300 h-[30px] ${
                   index === activeIndex
                     ? "bg-white text-black "
-                    : "text-gray-400"
+                    : `${isProduct ? "text-white hover:text-black":"text-gray-400"} `
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}

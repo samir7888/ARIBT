@@ -17,7 +17,7 @@ const NavLinks = () => {
         Home
       </Link>
       <div className="relative group">
-        <Link href="#" className="text-black font-medium  flex items-center">
+        <Link href="/products" className="text-black font-medium  flex items-center">
           Products
           <ChevronDown className="group-hover:hidden ml-1  mb-1" />
           <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
