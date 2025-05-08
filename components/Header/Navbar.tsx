@@ -31,10 +31,12 @@ export default function Navbar() {
           <NavLinks />
 
           {/* Contact Us Button (Desktop) */}
-          <button className="hidden group md:flex bg-brand text-white w-40  h-13 px-5 items-center  rounded-full border hover:pl-8  duration-600 border-brand font-aeonik">
+          <Link href='/contact'>
+          <button className="hidden group md:flex bg-brand text-white w-40  h-13 px-5 items-center  rounded-full border hover:pl-8  duration-600 border-brand font-aeonik cursor-pointer ">
             Contact Us
             <ChevronRight className="group-hover:hidden" />
           </button>
+          </Link>
 
           <MobileView />
         </div>

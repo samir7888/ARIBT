@@ -6,7 +6,7 @@ import ProductsCards from "./ProductsCards";
 const ProductBody = () => {
   return (
     <div className="p-10  mx-auto space-y-4 w-[70%]">
-      <h2 className="font-aeonik text-2xl">Our recents Products</h2>
+      <h2 className="font-aeonik text-2xl   py-5">Our recents Products</h2>
       <div className="flex  justify-between">
         <div>
           <Frame isProduct={true}  tabs={[
