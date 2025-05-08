@@ -9,7 +9,13 @@ const ProductBody = () => {
       <h2 className="font-aeonik text-2xl">Our recents Products</h2>
       <div className="flex  justify-between">
         <div>
-          <Frame isProduct={true} />
+          <Frame isProduct={true}  tabs={[
+            "Educational system",
+            "Financial",
+            "Hotel Management",
+            "Enterprise management",
+            "Corporate management",
+          ]}/>
         </div>
         <button className="font-noir px-5 py-3 pt-5 border border-brand bg-gradient-to-r from-brand-light to-brand text-white flex items-center rounded-full transition-all duration-700 ease-in-out hover:bg-gradient-to-l hover:from-brand-light hover:to-brand">
           Show All

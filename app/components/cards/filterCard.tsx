@@ -10,7 +10,13 @@ const tabs = [
   "Corporate management",
 ];
 
-export default function Frame({isProduct}:{isProduct?:boolean}) {
+export default function Frame({
+  isProduct,
+  tabs,
+}: {
+  isProduct?: boolean;
+  tabs?: string[];
+}) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoverStyle, setHoverStyle] = useState({});
@@ -53,9 +59,15 @@ export default function Frame({isProduct}:{isProduct?:boolean}) {
       }
     });
   }, []);
-
+  if (!tabs) {
+    return "No tabs available";
+  }
   return (
-    <Card className={`p-1 rounded-full tracking-wide font-normal  ${isProduct ? "bg-brand-primary":"bg-gray-200"}`}>
+    <Card
+      className={`p-1 rounded-full tracking-wide font-normal  ${
+        isProduct ? "bg-brand-primary" : "bg-gray-200"
+      }`}
+    >
       <CardContent className="p-0">
         <div className="relative">
           {/* Hover Highlight */}
@@ -69,16 +81,20 @@ export default function Frame({isProduct}:{isProduct?:boolean}) {
 
           {/* Tabs */}
           <div className="relative  flex space-x-[6px] items-center">
-            {tabs.map((tab, index) => (
+            {tabs.map((tab: string, index: number) => (
               <div
                 key={index}
-                ref={(el) => {
+                ref={(el: HTMLDivElement | null) => {
                   tabRefs.current[index] = el;
                 }}
                 className={`p-6 font-medium cursor-pointer rounded-3xl tracking-wide  transition-colors duration-300 h-[30px] ${
                   index === activeIndex
                     ? "bg-white text-black "
-                    : `${isProduct ? "text-white hover:text-black":"text-gray-400"} `
+                    : `${
+                        isProduct
+                          ? "text-white hover:text-black"
+                          : "text-gray-400"
+                      } `
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}

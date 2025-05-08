@@ -49,7 +49,15 @@ export default function ProductShowcase({
 
       {/* Filter section */}
       <div className="hidden md:flex container  flex-wrap gap-2 mb-8   rounded-4xl mx-auto w-fit  -z-10 ">
-        <Frame />
+        <Frame
+          tabs={[
+            "Educational system",
+            "Financial",
+            "Hotel Management",
+            "Enterprise management",
+            "Corporate management",
+          ]}
+        />
       </div>
 
       {/* Products grid */}
@@ -58,45 +66,46 @@ export default function ProductShowcase({
   );
 }
 
+export function Productcard() {
+  return (
+    <div className="border border-gray-200 rounded-2xl container grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto ">
+      <div className="flex  flex-col justify-between px-6 h-[520px] ">
+        <div className="space-y-6 p-4 w-[75%]  ">
+          <div>Icon</div>
+          <h2 style={{ fontSize: "clamp(2rem, 2vw, 2.5rem)" }}>
+            Abhyam School Management System
+          </h2>
+          <p
+            className="text-gray-400"
+            style={{ fontSize: "clamp(0.9rem, 1vw, 1.5rem)" }}
+          >
+            Mark and track attendance digitally with a single click. Notify
+            parents instantly about absences and generate attendance reports in
+            seconds.
+          </p>
+        </div>
+        <Link href={`/products/1`}>
+          <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300">
+            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300">
+              Read more
+            </span>
+            <ChevronRight className="pt-1 w-8 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
+        </Link>
+      </div>
 
-export function Productcard(){
-  return <div className="border border-gray-200 rounded-2xl container grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto ">
-  <div className="flex  flex-col justify-between px-6 h-[520px] ">
-    <div className="space-y-6 p-4 w-[75%]  ">
-      <div>Icon</div>
-      <h2 style={{ fontSize: "clamp(2rem, 2vw, 2.5rem)" }}>
-        Abhyam School Management System
-      </h2>
-      <p
-        className="text-gray-400"
-        style={{ fontSize: "clamp(0.9rem, 1vw, 1.5rem)" }}
-      >
-        Mark and track attendance digitally with a single click. Notify
-        parents instantly about absences and generate attendance reports
-        in seconds.
-      </p>
+      {/* Right Card */}
+      <div className="rounded-xl bg-gray-200 p-6">
+        <div className="overflow-hidden">
+          <Image
+            src="https://images.pexels.com/photos/31775324/pexels-photo-31775324/free-photo-of-close-up-of-car-dashboard-with-digital-display.jpeg?auto=compress&cs=tinysrgb&w=600"
+            width={1200}
+            height={500}
+            alt=""
+            className="bg-cover w-full rounded-xl "
+          />
+        </div>
+      </div>
     </div>
-    <Link href={`/products/1`}>
-      <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300">
-        <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300">
-          Read more
-        </span>
-        <ChevronRight className="pt-1 w-8 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" />
-      </button>
-    </Link>
-  </div>
-
-  {/* Right Card */}
-  <div className="rounded-xl bg-gray-200 p-6">
-    <div className="overflow-hidden">
-      <Image
-        src="https://images.pexels.com/photos/31775324/pexels-photo-31775324/free-photo-of-close-up-of-car-dashboard-with-digital-display.jpeg?auto=compress&cs=tinysrgb&w=600"
-        width={1200}
-        height={500}
-        alt=""
-        className="bg-cover w-full rounded-xl "
-      />
-    </div>
-  </div>
-</div>
+  );
 }
