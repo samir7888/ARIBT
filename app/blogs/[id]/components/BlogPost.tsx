@@ -1,7 +1,8 @@
 // BlogPost.tsx
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Copy } from "lucide-react";
 
 // Define types for our blog post data
 type Quote = {
@@ -35,44 +36,45 @@ const BlogPost: React.FC<BlogPostProps> = ({
   softwareTools,
 }) => {
   return (
-    <article className="max-w-3xl mx-auto px-4 py-8">
+    <article>
       {/* Lorem ipsum header section */}
       <div className="mb-8">
-        <p className="text-gray-700 text-sm mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper
-          mattis lorem non. Ultrices praesent amet ipsum justo massa. Eu dolor aliquot
-          risus gravida nunc at feugiat consequat purus. Non massa enim vitae duis mattis.
-          Vel in ultricies vel fringilla.
+        <p className="text-gray-700  mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          ullamcorper mattis lorem non. Ultrices praesent amet ipsum justo
+          massa. Eu dolor aliquot risus gravida nunc at feugiat consequat purus.
+          Non massa enim vitae duis mattis. Vel in ultricies vel fringilla.
         </p>
-        
+
         <h1 className="text-2xl font-bold mb-6">{title}</h1>
-        
-        <p className="text-gray-700 mb-8">
-          {introduction}
-        </p>
+
+        <p className="text-gray-700 mb-8">{introduction}</p>
       </div>
 
       {/* First image */}
       <div className="mb-8">
         <div className="relative w-full h-64 md:h-80">
-          <Image 
+          <Image
             src="https://images.pexels.com/photos/31649016/pexels-photo-31649016/free-photo-of-vibrant-cherry-blossom-trees-in-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-            alt="Minimalist workspace with desk and chair" 
+            alt="Minimalist workspace with desk and chair"
             fill
             className="object-cover"
           />
         </div>
         <p className="text-xs text-gray-500 mt-2">
-          Image courtesy of Lorem Pixelsum via <Link href="#" className="text-blue-500 hover:underline">Unsplash</Link>
+          Image courtesy of Lorem Pixelsum via{" "}
+          <Link href="#" className="text-blue-500 hover:underline">
+            Unsplash
+          </Link>
         </p>
       </div>
 
       {/* Quote section */}
       <blockquote className="border-l-4 border-gray-300 pl-4 py-2 my-8 bg-gray-50">
-        <p className="italic text-gray-700">
-          "{quote.text}"
-        </p>
-        <footer className="mt-2 text-sm">— {quote.author}, {quote.title}</footer>
+        <p className="italic text-gray-700">"{quote.text}"</p>
+        <footer className="mt-2 text-sm">
+          — {quote.author}, {quote.title}
+        </footer>
       </blockquote>
 
       {/* Main content */}
@@ -87,22 +89,21 @@ const BlogPost: React.FC<BlogPostProps> = ({
       {/* Software and tools section */}
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-4">Software and tools</h2>
-        <p className="text-gray-700">
-          {softwareTools}
-        </p>
+        <p className="text-gray-700">{softwareTools}</p>
       </section>
 
       {/* Resources section */}
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-4">Other resources</h2>
         <p className="text-gray-700 mb-4">
-          Sagittis sit eu at elementum, quis in. Proin praesent volutpat egestas sociis sit lorem nunc.
-          nunc sit. Eget diam curabitur mi ac. Auctor rutrum lacus malesuada massa ornare et.
-          Vulputate consectetur ac ultrices at diam. Sit ut fringilla tristique. Arcu sit dignissim
-          massa erat cursus vulputate gravida id. Sed quis auctor vulputate hac elementum gravida
-          cursus dis.
+          Sagittis sit eu at elementum, quis in. Proin praesent volutpat egestas
+          sociis sit lorem nunc. nunc sit. Eget diam curabitur mi ac. Auctor
+          rutrum lacus malesuada massa ornare et. Vulputate consectetur ac
+          ultrices at diam. Sit ut fringilla tristique. Arcu sit dignissim massa
+          erat cursus vulputate gravida id. Sed quis auctor vulputate hac
+          elementum gravida cursus dis.
         </p>
-        
+
         {/* Numbered list */}
         <ol className="list-decimal pl-8 mb-6">
           {resources.map((resource, index) => (
@@ -122,15 +123,18 @@ const BlogPost: React.FC<BlogPostProps> = ({
       {/* Second image */}
       <div className="mb-8">
         <div className="relative w-full h-64 md:h-80">
-          <Image 
+          <Image
             src="https://images.pexels.com/photos/31649016/pexels-photo-31649016/free-photo-of-vibrant-cherry-blossom-trees-in-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-            alt="Team collaboration session with sticky notes" 
+            alt="Team collaboration session with sticky notes"
             fill
             className="object-cover"
           />
         </div>
         <p className="text-xs text-gray-500 mt-2">
-          Image courtesy of Lorem via <Link href="#" className="text-blue-500 hover:underline">Unsplash</Link>
+          Image courtesy of Lorem via{" "}
+          <Link href="#" className="text-blue-500 hover:underline">
+            Unsplash
+          </Link>
         </p>
       </div>
 
@@ -150,25 +154,38 @@ const BlogPost: React.FC<BlogPostProps> = ({
         <div className="flex gap-4">
           <button className="p-2 hover:bg-gray-100 rounded-full">
             <span className="sr-only">Copy link</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
+            <Copy className="w-5" />
           </button>
           <button className="p-2 hover:bg-gray-100 rounded-full">
             <span className="sr-only">Share on X</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </button>
           <button className="p-2 hover:bg-gray-100 rounded-full">
             <span className="sr-only">Share on Facebook</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" />
             </svg>
           </button>
           <button className="p-2 hover:bg-gray-100 rounded-full">
             <span className="sr-only">Share on LinkedIn</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M6.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM5 10h3v9H5v-9ZM11 10h3v1.38a4 4 0 0 1 3.11-1.5c3.19 0 3.89 2.11 3.89 4.85V19h-3v-4c0-1.12-.02-2.56-1.6-2.56-1.6 0-1.84 1.22-1.84 2.48V19h-3v-9Z" />
             </svg>
           </button>

@@ -9,7 +9,7 @@ const ServicesSection = ({
   services = [],
 }) => {
   return (
-    <section className="py-16 z-0 px-4 container mx-auto ">
+    <section className=" z-0 container mx-auto ">
       {/* Section Header */}
       <TitleCard
         title="Facilities"
@@ -18,8 +18,8 @@ const ServicesSection = ({
       />
 
       {/* Services Grid */}
-      <div className="grid grid-rows-1 md:grid-rows-2  w-full bg-gradient-to-b from-gray-50 to-transparent">
-        <div className="h-fit grid grid-cols-1 md:grid-cols-2 gap-4 w-full ">
+      <div className="grid grid-rows-1 md:grid-rows-2 bg-gradient-to-b from-gray-50 to-transparent">
+        <div className="h-fit grid grid-cols-1 md:grid-cols-2 gap-4  ">
           {/* card */}
           <BorderImage />
           <BorderImage />
@@ -27,7 +27,7 @@ const ServicesSection = ({
 
         {/* Second row */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <BorderImage />
 
           <BorderImage />

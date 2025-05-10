@@ -106,7 +106,7 @@ const LatestWorks: React.FC = () => {
               transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
             }}
           >
-            {works.map((work) => (
+            {works.map((work,index) => (
               <div
                 key={work.id}
                 className="flex-shrink-0 px-2"
@@ -131,19 +131,7 @@ const LatestWorks: React.FC = () => {
                           <p className="text-gray-500">{work.subtitle}</p>
                         )}
 
-                        <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                          {work.tags.slice(0, 0).map((tag, index) => (
-                            <div key={tag}>
-                              <span className="mb-2 font-bold ">.</span>
-                              <span
-                                key={index}
-                                className={`text-xs font-semibold `}
-                              >
-                                {tag}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+                      
                       </div>
                       <Link href={`/portfolio/${work.id}`}>
                         <button className="bg-white text-gray-400 px-4 py-1 rounded  hover:bg-gray-50 transition-colors">
@@ -154,7 +142,7 @@ const LatestWorks: React.FC = () => {
                     <div className="flex flex-wrap gap-2">
                       {work.tags.slice(0, 2).map((tag, index) => (
                         <span
-                          key={tag}
+                          key={index}
                           className={`text-xs px-3 py-2 rounded-full bg-brand-primary text-white`}
                         >
                           {tag}

@@ -51,7 +51,7 @@ const FacilitySection = ({
 
   return (
     <div className="bg-[#F7FFFF]">
-      <section className="py-16 px-4 container mx-auto ">
+      <section className="container mx-auto ">
         {/* Header */}
         <TitleCard
           title="Facilities"

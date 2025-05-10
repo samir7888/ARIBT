@@ -72,7 +72,7 @@ const BlogCard = ({
 }) => {
   if (orientation === "horizontal") {
     return (
-      <div className="p-4 rounded-2xl flex flex-col md:flex-row gap-6  overflow-hidden border border-gray-200 bg-white">
+      <div className="p-4  rounded-2xl flex flex-col md:flex-row gap-6  overflow-hidden border border-gray-200 bg-white">
         <div className="md:w-2/5 h-64 rounded-2xl  ">
           <Image
             src={blog.image}
@@ -147,7 +147,7 @@ const BlogSection = () => {
         <div className="md:col-span-1">
           <BlogCard blog={blogData[0]} />
         </div>
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 space-y-5">
           <BlogCard blog={blogData[1]} orientation="horizontal" />
           <BlogCard blog={blogData[3]} orientation="horizontal" />
         </div>

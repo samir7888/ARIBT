@@ -5,7 +5,7 @@ import FooterSection from '../../components/Footer/FooterSection'
 
 const page = () => {
   return (
-    <div className='min-h-screen mx-auto'>
+    <div className='min-h-screen'>
         <BlogHeroSection title='Our Works' />
         <WorksMain />
         <FooterSection />

@@ -14,12 +14,14 @@ const BlogDetails = () => {
     return <div>No Details of that blog available</div>;
   }
   return (
-    <div className="container min-h-screen mx-auto flex flex-col font-aeonik p-2 md:p-24">
-      <div className="flex flex-col md:flex-row mx-auto justify-between items-start w-full md:w-3/5 p-2">
+    <div className="container !max-w-[800px] min-h-screen mx-auto flex flex-col font-aeonik">
+      <div className="flex gap-6">
         <div className="flex  flex-col w-full md:w-1/2">
           <p className="text-brand-primary">{filterBlog?.date}</p>
           <h2 className="text-2xl pt-4">{filterBlog?.title}</h2>
-          <p className="text-gray-400 pt-6 w-full md:w-4/5">{filterBlog?.excerpt}</p>
+          <p className="text-gray-400 pt-6 w-full md:w-4/5">
+            {filterBlog?.excerpt}
+          </p>
           <div className="flex gap-3 pt-6">
             <div className="rounded-full w-10 h-10 overflow-hidden">
               <Image
@@ -49,10 +51,8 @@ const BlogDetails = () => {
 
       {/* Body part */}
 
-      <div className="w-full md:w-2/3 flex flex-col container mx-auto mt-10">
-        <div className="w-full md:w-2/3 mx-auto ">
-          <BlogPage />
-        </div>
+      <div className="mt-10">
+        <BlogPage />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ const ButtonEffect1 = ({ word }: { word: string }) => {
   console.log(word);
   return (
     <div className="flex justify-center mt-12">
-      <button className="group relative overflow-hidden px-6 pt-2 py-2 border border-gray-400 text-brand-primary rounded-full transition-all duration-300">
+      <button className="group relative overflow-hidden px-6 pt-2 py-2 border border-gray-400 text-brand-primary rounded-full transition-all duration-300 cursor-pointer">
         <span className="relative pb-7 z-10 transition-colors duration-300 group-hover:text-white">
           {word}
         </span>

@@ -34,10 +34,10 @@ export default function AcademyHeroSection() {
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 font-noir">
-            <button className="bg-white pt-5 text-gray-800 px-6 py-3 rounded-full text-sm md:text-base hover:bg-gray-100 transition">
+            <button className="bg-white pt-5 text-gray-800 px-6 py-3 rounded-full text-sm md:text-base hover:bg-gray-100 transition cursor-pointer">
               Enroll Now
             </button>
-            <button className="bg-transparent border pt-5 border-white text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-white/10 transition">
+            <button className="bg-transparent border pt-5 border-white text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-white/10 transition cursor-pointer">
               Virtual College Tour
             </button>
           </div>

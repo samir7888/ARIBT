@@ -1,6 +1,6 @@
 import React from "react";
 import BlogHeroSection from "../../blogs/components/BlogHeroSection";
-import { Productcard } from "@/components/cards/productCard";
+import { Productcard } from "@/components/sections/product-section";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -84,7 +84,9 @@ const page = () => {
           </div>
         </div>
       </div>
-      <BlogPage />
+      <div className=" w-2/5 py-6 mx-auto">
+        <BlogPage />
+      </div>
       <FooterSection />
     </div>
   );

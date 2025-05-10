@@ -6,10 +6,10 @@ import { ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen w-full -mt-[100px]">
+    <div className="relative min-h-screen  -mt-[100px]">
       {/* Background image - fixed to cover entire section */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat "
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: `url(${hero.src})` }}
       ></div>
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
         </div>
 
         {/* Image */}
-        <div className="container mx-auto flex justify-center mt-8 ">
+        <div className="container mx-auto mt-8 ">
           <Image src={photo1} alt="Hero Image" width={1600} height={800} />
         </div>
         <div className=" flex text-center  text-white my-4 text-2xl pb-8">
