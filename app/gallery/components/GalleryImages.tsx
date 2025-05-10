@@ -1,200 +1,131 @@
-"use client"
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { ChevronRight } from 'lucide-react';
-// Sample images from Pexels (replace with your preferred image URLs)
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
+
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg",
-    alt: "Cyclist riding on a mountain road",
-    aspectRatio: "landscape", // can be landscape, portrait, or square
-    size: "large" // can be small, medium, large
+    src: "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Mountain landscape with lake reflection",
   },
   {
     id: 2,
-    src: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
-    alt:"modern office",
-    aspectRatio: "portrait",
-    size: "medium"
+    src: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Team collaborating in open office",
   },
   {
     id: 3,
-    src: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg",
-    alt: "Modern office space with people working",
-    aspectRatio: "landscape",
-    size: "medium"
+    src: "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Cyclist riding on a mountain road",
   },
   {
     id: 4,
-    src: "https://images.pexels.com/photos/6175204/pexels-photo-6175204.jpeg",
-    alt: "Cyclist on mountain road",
-    aspectRatio: "landscape",
-    size: "small"
+    src: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Woman posing against textured wall",
   },
   {
     id: 5,
-    src: "https://images.pexels.com/photos/6567255/pexels-photo-6567255.jpeg",
-    alt: "Woman posing against textured wall",
-    aspectRatio: "portrait",
-    size: "large"
+    src: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "People working in modern office",
   },
   {
     id: 6,
-    src: "https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg",
-    alt: "People working in modern office",
-    aspectRatio: "landscape",
-    size: "small"
+    src: "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Cyclist training on road",
   },
   {
     id: 7,
-    src: "https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg",
-    alt: "Cyclist training on road",
-    aspectRatio: "landscape",
-    size: "small"
+    src: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Woman in flowing dress",
   },
   {
     id: 8,
-    src: "https://images.pexels.com/photos/6169018/pexels-photo-6169018.jpeg",
-    alt: "Woman in flowing dress",
-    aspectRatio: "portrait",
-    size: "medium"
+    src: "https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Collaborative office workspace",
   },
   {
     id: 9,
-    src: "https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg",
-    alt: "Collaborative office workspace",
-    aspectRatio: "landscape",
-    size: "large"
+    src: "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Mountain landscape with lake reflection",
+  },
+  {
+    id: 10,
+    src: "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Forest during golden hour",
+  },
+  {
+    id: 11,
+    src: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Coffee cup on wooden table",
+  },
+  {
+    id: 12,
+    src: "https://images.pexels.com/photos/21014/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Beach with crystal clear water",
+  },
+  {
+    id: 13,
+    src: "https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Person hiking on rocky terrain",
+  },
+  {
+    id: 14,
+    src: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Modern architecture building",
+  },
+  {
+    id: 15,
+    src: "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Sunset over the city skyline",
+  },
+  {
+    id: 16,
+    src: "https://images.pexels.com/photos/327482/pexels-photo-327482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Bookshelf in cozy library",
+  },
+  {
+    id: 17,
+    src: "https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Snow-covered mountain peak",
+  },
+  {
+    id: 18,
+    src: "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    alt: "Woman standing in field at sunset",
   }
 ];
 
-const ImageGallery = () => {
 
+const ImageGallery = () => {
   const [showAll, setShowAll] = useState(false);
   const displayImages = showAll ? galleryImages : galleryImages.slice(0, 9);
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-6 gap-2 md:gap-4">
-        {/* Row 1 */}
-        <div className="col-span-6 md:col-span-2">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[0].src}
-              alt={displayImages[0].alt}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="col-span-6 md:col-span-2">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[1].src}
-              alt={displayImages[1].alt}
-              width={400}
-              height={600}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="col-span-6 md:col-span-2">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[2].src}
-              alt={displayImages[2].alt}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Row 2 */}
-        <div className="col-span-6 md:col-span-1">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[3].src}
-              alt={displayImages[3].alt}
-              width={300}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="col-span-6 md:col-span-3">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[4].src}
-              alt={displayImages[4].alt}
+      <div className="masonry-grid w-fit">
+        {displayImages.map((image) => (
+          <div key={image.id} className="masonry-item">
+            <Image
+              src={image.src}
+              alt={image.alt}
               width={800}
               height={600}
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover"
             />
           </div>
-        </div>
-        <div className="col-span-6 md:col-span-2">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[5].src}
-              alt={displayImages[5].alt}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Row 3 */}
-        <div className="col-span-6 md:col-span-2">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[6].src}
-              alt={displayImages[6].alt}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="col-span-6 md:col-span-2">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[7].src}
-              alt={displayImages[7].alt}
-              width={400}
-              height={600}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="col-span-6 md:col-span-2">
-          <div className="rounded-lg overflow-hidden h-full">
-            <Image 
-              src={displayImages[8].src}
-              alt={displayImages[8].alt}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* Show All Button */}
       <div className="flex justify-center mt-8 mb-4">
-        <button 
+        <button
           onClick={() => setShowAll(!showAll)}
           className="bg-teal-700 hover:bg-teal-800 text-white px-4 py-2 rounded-full flex items-center space-x-2 transition duration-300"
         >
-          <span>Show All</span>
-         <ChevronRight />
+          <span>{showAll ? "Show Less" : "Show All"}</span>
+          <ChevronRight />
         </button>
       </div>
-
-      
     </div>
   );
 };

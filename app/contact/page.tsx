@@ -2,13 +2,14 @@ import React from "react";
 import BlogHeroSection from "../blogs/components/BlogHeroSection";
 import ContactForm from "./components/FormPage";
 import FooterSection from "../../components/Footer/FooterSection";
+import ContactUsPage from "./components/FormPage";
 
 const page = () => {
   return (
     <div className="mx-auto min-h-screen">
       <BlogHeroSection title="Contact Us" />
       <div className="mx-auto w-full md:w-fit">
-        <ContactForm />
+        <ContactUsPage />
         
       </div>
       <div className="w-full px-1 md:w-3/4 flex flex-col md:flex-row space-y-8 justify-between py-12 mx-auto font-aeonik tracking-wide">
