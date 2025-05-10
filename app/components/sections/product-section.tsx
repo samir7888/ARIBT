@@ -30,7 +30,7 @@ export default function ProductShowcase({
   );
 
   return (
-    <div style={{ fontFamily: "Aeonik" }} className=" mx-auto px-4 py-8">
+    <div style={{ fontFamily: "Aeonik" }} className="my-12 mx-auto px-4 py-8">
       {/* Header section */}
       <div className="flex flex-col items-center mb-8">
         <div className="inline-flex border px-4 py-2 border-gray-200 rounded-2xl items-center gap-2 text-sm text-black  mb-2">

@@ -50,7 +50,7 @@ const FacilitySection = ({
   const displayServices = services.length > 0 ? services : defaultServices;
 
   return (
-    <div className="bg-[#F7FFFF]">
+    <div className="bg-[#F7FFFF] my-12">
       <section className="container mx-auto ">
         {/* Header */}
         <TitleCard

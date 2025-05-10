@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 
 const CaseStudySection = () => {
   return (
-    <div className="container mx-auto flex flex-col md:flex-row  space-x-14">
+    <div className="container my-12 mx-auto flex flex-col md:flex-row  space-x-14">
       {/* Image Section */}
       <div className="w-full md:w-1/2">
         <Image
@@ -43,7 +43,7 @@ const CaseStudySection = () => {
             </p>
           </div>
           <div className="">
-            <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300">
+            <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300 cursor-pointer">
               <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300">
                 Read more
               </span>

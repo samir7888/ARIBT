@@ -9,7 +9,7 @@ const ServicesSection = ({
   services = [],
 }) => {
   return (
-    <section className=" z-0 container mx-auto ">
+    <section className="my-12 z-0 container mx-auto ">
       {/* Section Header */}
       <TitleCard
         title="Facilities"

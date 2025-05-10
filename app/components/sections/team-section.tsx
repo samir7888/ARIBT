@@ -7,7 +7,7 @@ import TeamsCard from "../../../components/TeamsCard";
 
 const TeamSection = () => {
   return (
-    <section className="py-16 px-4 container mx-auto">
+    <section className="my-12 px-4 container mx-auto">
       <TitleCard
         title="Facilities"
         sectionTitle="Our Teams"

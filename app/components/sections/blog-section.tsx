@@ -136,26 +136,28 @@ const BlogCard = ({
 
 const BlogSection = () => {
   return (
-    <section className="container mx-auto py-16 px-4">
-      <TitleCard
-        title="Facilities"
-        sectionTitle="Recent Blogs"
-        sectionSubtitle="Focus your attention on developing your business, and let us work for your overall school management headache"
-      />
+    <div className="bg-gray-50 py-12">
+      <section className="container mx-auto">
+        <TitleCard
+          title="Facilities"
+          sectionTitle="Recent Blogs"
+          sectionSubtitle="Focus your attention on developing your business, and let us work for your overall school management headache"
+        />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-        <div className="md:col-span-1">
-          <BlogCard blog={blogData[0]} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div className="md:col-span-1">
+            <BlogCard blog={blogData[0]} />
+          </div>
+          <div className="md:col-span-1 space-y-5">
+            <BlogCard blog={blogData[1]} orientation="horizontal" />
+            <BlogCard blog={blogData[3]} orientation="horizontal" />
+          </div>
         </div>
-        <div className="md:col-span-1 space-y-5">
-          <BlogCard blog={blogData[1]} orientation="horizontal" />
-          <BlogCard blog={blogData[3]} orientation="horizontal" />
-        </div>
-      </div>
 
-      {/* View All Button */}
-      <ButtonEffect1 word="View All" />
-    </section>
+        {/* View All Button */}
+        <ButtonEffect1 word="View All" />
+      </section>
+    </div>
   );
 };
 

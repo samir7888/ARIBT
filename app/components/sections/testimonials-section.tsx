@@ -4,7 +4,7 @@ import TitleCard from "../cards/titleCard";
 
 const testimonials = () => {
   return (
-    <div className="relative overflow-hidden py-10 bg-gray-50 space-y-10 ">
+    <div className="relative overflow-hidden my-12 bg-white space-y-10 ">
       <TitleCard
         title="Facilities"
         sectionSubtitle="Focus your attention your business, and let us work for your overall school management headache"

@@ -1,6 +1,7 @@
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import logo from "../../public/logo.png";
 import { Link } from "lucide-react";
+import Image from "next/image";
 
 const FooterCard = () => {
   return (
@@ -11,10 +12,15 @@ const FooterCard = () => {
         style={{ backgroundImage: `url(${logo.src})` }}
       ></div>
 
-      <div className="flex flex-col md:flex-row gap-12 md:gap-0  justify-between  text-gray-500 md:p-6">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-0  justify-between  text-gray-500 md:py-6">
         <div className="w-full p-3  md:w-1/4 space-y-5">
-          <div className="text-black text-xl">
-            Cassy
+          <div className="">
+            <Image
+            src={logo}
+            alt="aribt logo"
+            width={200}
+            height={100}
+            />
           </div>
           <p className="text-sm">
             Cassy Digital, a school software that helps the business efficently

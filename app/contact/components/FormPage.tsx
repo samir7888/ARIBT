@@ -1,19 +1,7 @@
-'use client'
+
 import React from 'react';
 import Image from 'next/image';
-import { 
-  Form, 
-  FormControl, 
-  FormField, 
-  FormItem, 
-  FormLabel 
-} from '@/components/components/ui/form';
-import { Input } from '@/components/components/ui/input';
-import { Textarea } from '@/components/components/ui/textarea';
-import { Checkbox } from '@/components/components/ui/checkbox';
-import { Button } from '@/components/components/ui/button';
-import { ChevronDown, ChevronRight } from 'lucide-react';
-import { useForm } from 'react-hook-form';
+
 import ContactForm from './ContactForm';
 
 const ContactUsPage = () => {

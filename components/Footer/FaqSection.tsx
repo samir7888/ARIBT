@@ -40,7 +40,7 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <div className="w-full pt-5 mx-auto text-white">
+    <div className=" pt-5  text-white">
       <div className="space-y-3">
         <h2
           style={{ fontSize: "clamp(1.5rem, 2.5vw, 4rem)" }}
