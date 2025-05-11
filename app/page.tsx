@@ -26,7 +26,7 @@ export default function Home() {
       <DivideSection title="Our Partners" />
       <FacilitySection />
       {/* DivideSection4 */}
-      <DivideSection title="Our Companies" />
+      {/* <DivideSection title="Our Companies" /> */}
       <TeamSection />
       <TestimonialSection />
       <BlogSection />

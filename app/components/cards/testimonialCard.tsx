@@ -8,12 +8,12 @@ const TestimonialCard = () => (
     className=" p-[1px] w-full  rounded-2xl flex gap-12 "
     style={{
       background:
-        "linear-gradient(to bottom, var(--color-gray-100), transparent)",
+        "linear-gradient(to bottom, var(--color-white), transparent)",
     }}
   >
     {testimonials.map((testimonial) => (
       <div key={testimonial.id}
-        className=" flex flex-col w-[400px] h-auto  p-2"
+        className=" flex bg-gray-100 flex-col w-[400px] h-auto  p-2"
         style={{ borderRadius: "calc(var(--radius-2xl) - 3px)" }}
       >
         {/* Top Section: Profile and Logo */}

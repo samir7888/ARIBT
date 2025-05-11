@@ -65,7 +65,7 @@ export default function ProductShowcase({
 
 export function Productcard() {
   return (
-    <div className="border border-gray-200 rounded-2xl container grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto ">
+    <div className="border border-gray-200 rounded-2xl container grid grid-cols-1 !p-0 md:grid-cols-2 gap-6 mx-auto ">
       <div className="flex  flex-col justify-between px-6 h-[520px] ">
         <div className="space-y-6 w-[75%]  ">
           <div>Icon</div>

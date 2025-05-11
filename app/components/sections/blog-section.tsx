@@ -74,15 +74,17 @@ const BlogCard = ({
   if (orientation === "horizontal") {
     return (
       <div className="p-4  rounded-2xl flex flex-col md:flex-row gap-6  overflow-hidden border border-gray-200 bg-white">
-        <div className="md:w-2/5 h-64 rounded-2xl  ">
-          <Image
-            src={blog.image}
-            width={600}
-            height={400}
-            alt={blog.title}
-            className="w-full h-full object-cover rounded-2xl"
-          />
-        </div>
+          <div className="md:w-2/5 h-64 rounded-2xl  ">
+        <Link href={`/blog/${blog.id}`}>
+            <Image
+              src={blog.image}
+              width={600}
+              height={400}
+              alt={blog.title}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+        </Link>
+          </div>
         <div className="md:w-3/5 p-6 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -91,7 +93,9 @@ const BlogCard = ({
               </div>
               <ArrowUpRight className="h-5 w-5 text-gray-500" />
             </div>
+            <Link href={`/blog/${blog.id}`}>
             <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
+            </Link>
             <p className="text-gray-600 mb-6">{blog.description}</p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -107,13 +111,15 @@ const BlogCard = ({
   return (
     <div className="flex flex-col rounded-2xl p-4 overflow-hidden border border-gray-200 bg-white h-full">
       <div className=" h-48">
+        <Link href={`/blog/${blog.id}`}>
         <Image
           src={blog.image}
           width={600}
           height={400}
           alt={blog.title}
           className="w-full h-full object-cover rounded-2xl"
-        />
+          />
+          </Link>
       </div>
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center justify-between mb-3">
@@ -121,9 +127,11 @@ const BlogCard = ({
             {blog.author} • {blog.date}
           </div>
         </div>
+        <Link href={`/blog/${blog.id}`}>
         <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600">
           {blog.title}
         </h3>
+        </Link>
         <p className="text-gray-600 mb-6 flex-1">{blog.description}</p>
         <div className="flex flex-wrap gap-2">
           {blog.categories.map((category, index) => (
@@ -157,9 +165,9 @@ const BlogSection = () => {
 
         {/* View All Button */}
       </section>
-        <Link href={'/blogs'}>
+      <Link href={"/blogs"}>
         <ButtonEffect1 word="View All" />
-        </Link>
+      </Link>
     </div>
   );
 };

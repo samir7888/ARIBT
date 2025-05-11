@@ -45,7 +45,7 @@ export function Testimonials() {
         { x: direction === 'left' ? 0 : -contentWidth },
         {
           x: direction === 'left' ? -contentWidth : 0,
-          duration: 40,
+          duration: 20,
           repeat: -1,
           ease: Power0.easeNone,
         }

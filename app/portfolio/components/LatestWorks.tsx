@@ -121,6 +121,9 @@ const LatestWorks: React.FC = () => {
                       className="object-cover p-1 rounded-2xl"
                     />
                   </div>
+
+
+                  
                   <div className="absolute left-2 right-2 min-h-28 bottom-2 bg-white rounded-xl p-4">
                     <div className="flex items-center mb-4">
                       <div className="mr-auto">
@@ -150,6 +153,9 @@ const LatestWorks: React.FC = () => {
                       ))}
                     </div>
                   </div>
+
+
+
                 </div>
               </div>
             ))}
