@@ -3,6 +3,7 @@ import TitleCard from "../cards/titleCard";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
+import Link from "next/link";
 
 // Mock blog data
 const blogData = [
@@ -155,8 +156,10 @@ const BlogSection = () => {
         </div>
 
         {/* View All Button */}
-        <ButtonEffect1 word="View All" />
       </section>
+        <Link href={'/blogs'}>
+        <ButtonEffect1 word="View All" />
+        </Link>
     </div>
   );
 };

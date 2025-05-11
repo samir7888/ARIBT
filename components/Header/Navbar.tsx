@@ -11,7 +11,7 @@ export default function Navbar() {
       style={{ fontFamily: "Noir", zIndex: "1000" }}
       className="sticky top-0 flex justify-center py-4 px-4"
     >
-      <div className="w-full max-w-4xl mx-auto bg-white rounded-full shadow-md border border-gray-200 h-16 flex items-center  ">
+      <div className="w-full max-w-4xl   bg-white rounded-full shadow-md border border-gray-200 h-16 flex items-center  ">
         <div className="w-full p-3 flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">

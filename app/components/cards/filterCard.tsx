@@ -45,6 +45,8 @@ export default function Frame({
         width: `${offsetWidth}px`,
       });
     }
+    console.log(activeElement?.innerText)
+
   }, [activeIndex]);
 
   useEffect(() => {
@@ -64,7 +66,7 @@ export default function Frame({
   }
   return (
     <Card
-      className={`p-1 rounded-full tracking-wide font-normal  ${
+      className={`p-1 rounded-full tracking-wide font-normal   ${
         isProduct ? "bg-brand-primary" : "bg-gray-200"
       }`}
     >

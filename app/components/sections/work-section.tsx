@@ -2,6 +2,7 @@ import React from "react";
 import TitleCard from "../cards/titleCard";
 import Image from "next/image";
 import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
+import Link from "next/link";
 
 const FacilitySection = ({
   sectionTitle = "Our Recent Works",
@@ -139,7 +140,9 @@ const FacilitySection = ({
         </div>
 
         {/*  Explorer all Button */}
+        <Link href={'/portfolio'}>
         <ButtonEffect1 word="Explorer All"/>
+        </Link>
       </section>
     </div>
   );

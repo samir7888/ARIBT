@@ -73,7 +73,7 @@ const ContactForm = () => {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold text-teal-900 leading-tight">
+        <h1 className="font-aeonik text-4xl font-bold text-teal-900 leading-tight">
           Let's level up your
           <br />
           brand, together

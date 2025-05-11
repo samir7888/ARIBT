@@ -11,7 +11,7 @@ const BlogHeroSection = ({title}:{title:string}) => {
       ></div>
       <div className="absolute space-y-8 text-5xl font-semibold left-0 right-0 bottom-10 text-white flex flex-col justify-between items-center">
         <div><BreadCrumb /></div>
-        <h2>{title}</h2>
+        <h3 className="font-aeonik tracking-wide" >{title}</h3>
       </div>
     </div>
   );

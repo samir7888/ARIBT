@@ -8,7 +8,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <BlogHeroSection title="Gallery" />
-      <div className="w-fit py-16 mx-auto">
+      <div className="hidden md:flex w-fit py-16 mx-auto">
         <Frame
           isProduct={true}
           tabs={[
@@ -20,9 +20,8 @@ const page = () => {
         />
       </div>
 
-      <div>
-        <ImageGallery />
-      </div>
+      <ImageGallery />
+
       <FooterSection />
     </div>
   );

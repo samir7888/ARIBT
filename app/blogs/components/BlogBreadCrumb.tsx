@@ -1,14 +1,16 @@
+"use client"
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/components/ui/breadcrumb";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const BreadCrumb = () => {
+  const pathname = usePathname();
   return (
     <Breadcrumb
       className="bg-gray-500 font-noir font-light  opacity-70 text-white
@@ -16,7 +18,7 @@ const BreadCrumb = () => {
     >
       <BreadcrumbList>
         <BreadcrumbItem className="bg-brand-primary px-3 py-2  rounded-4xl ">
-          <Link className="pt-2 tracking-wider" href="/blogs">Blogs</Link>
+          <Link className="pt-2 tracking-wider" href={`/${pathname.split('/')[1]}`}>{pathname.split('/')[1]}</Link>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

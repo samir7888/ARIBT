@@ -52,5 +52,5 @@ export const testimonials = [
     social: "https://facebook.com/sophiapatel",
     message:
       "Our DTC sales doubled after we implemented the landing page copy Samihah wrote. She gets emotional storytelling and conversion.",
-  }
+  },
 ];

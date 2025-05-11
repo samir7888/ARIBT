@@ -57,7 +57,7 @@
 }
 
 .card-slide-left {
-  animation: slide-left 20s linear infinite alternate-reverse ;
+  animation: slide-left 20s linear infinite  ; 
 }
 
 .card-slide-right {

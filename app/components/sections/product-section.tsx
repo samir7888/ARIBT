@@ -45,7 +45,7 @@ export default function ProductShowcase({
       </div>
 
       {/* Filter section */}
-      <div className="hidden md:flex   flex-wrap gap-2 mb-8   rounded-4xl mx-auto w-fit  -z-10 ">
+      <div className="hidden md:flex  mb-8   rounded-4xl mx-auto w-fit  ">
         <Frame
           tabs={[
             "Educational system",

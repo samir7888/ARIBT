@@ -3,6 +3,7 @@ import hero from "../../../public/hero.png";
 import Image from "next/image";
 import photo1 from "../../../public/Property 1=Variant2.png";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -40,12 +41,14 @@ const HeroSection = () => {
           style={{ fontFamily: "Noir" }}
           className="flex justify-center mt-4 space-x-3"
         >
-          <button className="px-5 py-3 pt-5 border border-brand bg-gradient-to-r from-brand-light to-brand text-white flex items-center rounded-full transition-all duration-700 ease-in-out hover:bg-gradient-to-l hover:from-brand-light hover:to-brand">
+          <Link href={'/contact'}>
+          <button className="px-5 py-3 pt-5 border border-brand bg-gradient-to-r from-brand-light to-brand text-white flex items-center rounded-full transition-all duration-700 ease-in-out hover:bg-gradient-to-l hover:from-brand-light cursor-pointer hover:to-brand">
             Lets Talk
             <ChevronRight className="mb-1 ml-1 w-3" />
           </button>
+          </Link>
 
-          <button className="px-5 py-2 pt-4 bg-white text-brand-primary rounded-full transition-colors duration-400 ease-in-out hover:text-white hover:bg-brand">
+          <button className="px-5 py-2 pt-4 bg-white text-brand-primary rounded-full transition-colors duration-400 ease-in-out hover:text-white hover:bg-brand cursor-pointer">
             Explore Services
           </button>
         </div>

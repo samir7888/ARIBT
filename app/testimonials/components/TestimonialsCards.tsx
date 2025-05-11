@@ -14,7 +14,7 @@ interface Testimonial {
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <section
-    className="p-[1px] rounded-2xl h-auto w-full"
+    className="p-[1px] rounded-2xl h-auto"
     style={{
       background: "linear-gradient(to bottom, var(--color-gray-100), transparent)",
     }}
