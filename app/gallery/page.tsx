@@ -8,7 +8,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <BlogHeroSection title="Gallery" />
-      <div className="hidden md:flex w-fit py-16 mx-auto">
+      <div className="container mx-auto flex w-fit lg:justify-center mb-2 overflow-x-auto ">
         <Frame
           isProduct={true}
           tabs={[

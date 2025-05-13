@@ -218,7 +218,7 @@ const FacilitySection = ({
                 height={600}
                 className="bg-cover w-full h-full rounded-xl "
               />
-              <div className="absolute left-5 right-5 bottom-6 min-h-28  bg-white rounded-xl p-4">
+              <div className="absolute left-5 right-5 bottom-6 min-h-24  bg-white rounded-xl p-4">
                 <div className="flex items-center mb-4">
                   <div className="mr-auto">
                     <h3 className="font-semibold text-md ">Akshar College</h3>

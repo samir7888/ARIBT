@@ -13,7 +13,7 @@ const ProductBody = () => {
           <ChevronRight className="mb-1 ml-1 w-4" />
         </button>
       </div>
-      <div className="hidden md:flex  mx-auto w-fit">
+      <div className="container mx-auto flex w-fit lg:justify-center mb-8 overflow-x-auto ">
         <Frame
           isProduct={true}
           tabs={[

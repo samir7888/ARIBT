@@ -39,7 +39,7 @@ const FooterCard = () => {
             </a>
           </div>
           <div className="space-y-5">
-            <h2 className="text-black text-xl">About</h2>
+            <h2 className="text-black text-xl">Resources</h2>
             <a href="#" className="block">
               Testimonials
             </a>
@@ -88,7 +88,7 @@ const FooterCard = () => {
         <div className=" text-center">
           <p>Copyright 2025 Sameer, All Rights Reserved</p>
         </div>
-        <div className="flex justify-center space-x-12 pt-4 md:pt-0 ">
+        <div className="flex justify-center space-x-6 pt-4 md:pt-0 ">
           <p>Cookie Policy</p>
           <p>Privacy Policy</p>
           <p>Terms and conditions</p>

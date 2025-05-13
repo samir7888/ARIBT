@@ -45,7 +45,7 @@ export default function ProductShowcase({
       </div>
 
       {/* Filter section */}
-      <div className="hidden md:flex  mb-8   rounded-4xl mx-auto w-fit  ">
+      <div className="container mx-auto flex w-fit lg:justify-center mb-8 overflow-x-auto ">
         <Frame
           tabs={[
             "Educational system",

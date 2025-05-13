@@ -6,7 +6,7 @@ const TeamsCard = () => {
   return (
     <div
         style={{ fontFamily: "Aeonik" }}
-        className="container mx-auto grid grid-rows-2 space-y-12 mt-8"
+        className="   mx-auto grid grid-rows-2 space-y-12 mt-8"
       >
         
         <div className=" mx-auto grid grid-cols-2 md:grid-cols-4 h-fit w-fit gap-8">
