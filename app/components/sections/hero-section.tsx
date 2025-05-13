@@ -41,17 +41,16 @@ const HeroSection = () => {
           className="flex justify-center mt-4 space-x-3"
         >
           <Link href={"/contact"}>
-           <button className="cursor-pointer relative overflow-hidden group px-5 py-3 pt-5 border border-brand text-white flex items-center rounded-full bg-transparent z-10">
-  <span className="relative z-20 flex items-center">
-    Lets Talk
-    <ChevronRight className="mb-1 ml-1 w-3" />
-  </span>
+            <button className="cursor-pointer relative overflow-hidden group px-5 py-3 pt-5 border border-brand text-white flex items-center rounded-full bg-transparent z-10">
+              <span className="relative z-20 flex items-center">
+                Lets Talk
+                <ChevronRight className="mb-1 ml-1 w-3" />
+              </span>
 
-  {/* Background Layers */}
-  <span className="absolute inset-0 bg-gradient-to-r from-brand-light to-brand transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-10" />
-  <span className="absolute inset-0 bg-gradient-to-l from-brand-light to-brand transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-10" />
-</button>
-
+              {/* Background Layers */}
+              <span className="absolute inset-0 bg-gradient-to-r from-brand-light to-brand transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 z-10" />
+              <span className="absolute inset-0 bg-gradient-to-l from-brand-light to-brand transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-10" />
+            </button>
           </Link>
 
           <button className="px-5 py-2 pt-4 bg-white text-brand-primary rounded-full transition-colors duration-700 ease-in-out hover:text-white hover:bg-brand cursor-pointer">
