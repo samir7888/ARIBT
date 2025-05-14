@@ -10,6 +10,7 @@ import type {
   Testimonials,
 } from "../../testimonials/components/Types/TestimonialsTypes";
 import BlogBody from "../../blogs/[id]/components/BlogBody";
+import TestimonialBody from "./TestimonialBody";
 
 export default function Testimonials({
   testimonials,
@@ -74,7 +75,7 @@ export default function Testimonials({
         onMouseEnter={() => handleHover(true, anim1Ref)}
         onMouseLeave={() => handleHover(false, anim1Ref)}
       >
-        <div ref={row1Ref} className="flex w-max gap-6 ">
+        <div ref={row1Ref} className="flex  w-max gap-6 ">
           {[...Array(4)].map((_, idx) => (
             <TestimonialCard key={`r1-${idx}`} testimonials={testimonials} />
           ))}
@@ -99,7 +100,7 @@ export default function Testimonials({
 
 const TestimonialCard = ({ testimonials }: { testimonials: Testimonials }) => (
   <section
-    className=" p-[1px] w-full  rounded-2xl flex gap-12 "
+    className=" p-[1px] w-full h-fit  rounded-2xl flex gap-12 "
     style={{
       background: "linear-gradient(to bottom, var(--color-white), transparent)",
     }}
@@ -126,22 +127,24 @@ const TestimonialCard = ({ testimonials }: { testimonials: Testimonials }) => (
             </div>
           </div>
 
-          {/* <Link
-            href={testimonial.social}
+          <Link
+            href={
+              testimonial?.social ? `testimonial.social` : "https/facebook.com"
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-600 transition"
           >
             <FaFacebook size={40} />
-          </Link> */}
+          </Link>
         </div>
 
         {/* Testimonial Content */}
         <div
           style={{ fontSize: "clamp(0.7rem, 0.9vw, 1rem)" }}
-          className="text-sm w-fit mt-5 p-2 rounded-xl bg-white text-brand-primary leading-relaxed "
+          className="text-sm w-fit mt-5 p-2 rounded-xl bg-white text-brand-primary leading-relaxed line-clamp-4 "
         >
-          <BlogBody description={testimonial.description} />
+          <TestimonialBody description={testimonial.description} />
         </div>
       </div>
     ))}

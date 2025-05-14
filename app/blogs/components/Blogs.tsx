@@ -34,17 +34,17 @@ export default async function Blogs({
               key={post.id}
               className="flex flex-col rounded-lg overflow-hidden bg-white hover:shadow-md transition-shadow"
             >
-              {/* <Link href={`/blogs/${post.id}`}>
+              <Link href={`/blogs/${post.id}`}>
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
-                  src={post.image}
+                  src={(post?.image) ? `${post?.image}`:'https://placehold.co/600x400/png' }
                   alt={post.title}
                   width={400}
                   height={500}
                   className="w-full h-full object-cover"
                 />
               </div>
-            </Link> */}
+            </Link>
 
               <div className="p-4 flex flex-col flex-grow">
                 <div className="flex items-center text-sm text-brand-primary mb-2">

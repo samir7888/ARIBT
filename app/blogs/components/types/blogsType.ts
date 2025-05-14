@@ -12,6 +12,7 @@ type BlogPost = {
   updatedAt: string;
   deletedAt: string | null;
   title: string;
+  image?: string;
   description: string;
   date: string;
   author: string;

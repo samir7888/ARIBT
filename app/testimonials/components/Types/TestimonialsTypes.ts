@@ -17,6 +17,7 @@ export interface Testimonial {
   updatedAt: string;
   deletedAt: string | null;
   name: string;
+  social?: string;
   position: string;
   description: string;
   image: string;
