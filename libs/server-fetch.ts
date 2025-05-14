@@ -1,0 +1,27 @@
+'use server';
+
+const url = process.env.API_URL;
+
+export async function serverFetch(path: string) {
+    console.log('path',path)
+  try {
+    if (!url) throw new Error("API_URL is not defined in environment variables.");
+console.log(`${url}${path}`)
+    const response = await fetch(`${url}${path}`, {
+      // Optional: you can set method, headers, cache, etc.
+      method: 'GET',
+      cache: 'no-store', // prevents stale data (optional, adjust if needed)
+    });
+    console.log(response)
+
+    if (!response.ok) {
+      console.error(`Fetch failed: ${response.status} ${response.statusText}`);
+      return null;
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Server fetch error:', error);
+    return null;
+  }
+}

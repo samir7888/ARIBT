@@ -76,13 +76,13 @@ const FacilitySection = ({
                   <div className="mr-auto">
                     <h3 className="font-semibold text-md ">Akshar College</h3>
                     <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                      <span className="">
+                      <span className="flex items-center">
                         <span className=" font-bold pb-2 ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Branding
                         </span>
                       </span>
-                      <span>
+                      <span  className="flex items-center">
                         <span className="pb-2 font-bold ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Designing
@@ -116,20 +116,20 @@ const FacilitySection = ({
                 alt=""
                 width={1200}
                 height={600}
-                className="bg-cover w-full h-full rounded-xl rounded-xl"
+                className="bg-cover w-full h-full  rounded-xl"
               />
               <div className="absolute left-5 right-5 bottom-6 min-h-28  bg-white rounded-xl p-4">
                 <div className="flex items-center mb-4">
                   <div className="mr-auto">
                     <h3 className="font-semibold text-md ">Akshar College</h3>
                     <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                      <span className="">
+                      <span className="flex items-center">
                         <span className=" font-bold pb-2 ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Branding
                         </span>
                       </span>
-                      <span>
+                      <span className="flex items-center">
                         <span className="pb-2 font-bold ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Designing
@@ -176,13 +176,13 @@ const FacilitySection = ({
                   <div className="mr-auto">
                     <h3 className="font-semibold text-md ">Akshar College</h3>
                     <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                      <span className="">
+                      <span className="flex items-center">
                         <span className=" font-bold pb-2 ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Branding
                         </span>
                       </span>
-                      <span>
+                      <span className="flex items-center">
                         <span className="pb-2 font-bold ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Designing
@@ -224,15 +224,15 @@ const FacilitySection = ({
                     <h3 className="font-semibold text-md ">Akshar College</h3>
 
                     <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                      <span className="">
+                      <span  className="flex items-center">
                         <span className=" font-bold pb-2 ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Branding
                         </span>
                       </span>
-                      <span>
+                      <span className="flex items-center">
                         <span className="pb-2 font-bold ">.</span>
-                        <span className={`text-xs font-semibold mx-2`}>
+                        <span className='text-xs font-semibold mx-2'>
                           Designing
                         </span>
                       </span>
@@ -274,13 +274,13 @@ const FacilitySection = ({
                   <div className="mr-auto">
                     <h3 className="font-semibold text-md ">Akshar College</h3>
                     <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                      <span className="">
+                      <span className="flex items-center">
                         <span className=" font-bold pb-2 ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Branding
                         </span>
                       </span>
-                      <span>
+                      <span className="flex items-center">
                         <span className="pb-2 font-bold ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Designing
@@ -321,13 +321,13 @@ const FacilitySection = ({
                   <div className="mr-auto">
                     <h3 className="font-semibold text-md ">Akshar College</h3>
                     <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                      <span className="">
+                      <span className="flex items-center">
                         <span className=" font-bold pb-2 ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Branding
                         </span>
                       </span>
-                      <span>
+                      <span className="flex items-center">
                         <span className="pb-2 font-bold ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Designing
@@ -368,13 +368,13 @@ const FacilitySection = ({
                   <div className="mr-auto">
                     <h3 className="font-semibold text-md ">Akshar College</h3>
                     <div className="flex items-center flex-wrap gap-2 text-gray-400">
-                      <span className="">
+                      <span className="flex items-center">
                         <span className=" font-bold pb-2 ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Branding
                         </span>
                       </span>
-                      <span>
+                      <span className="flex items-center">
                         <span className="pb-2 font-bold ">.</span>
                         <span className={`text-xs font-semibold mx-2`}>
                           Designing
