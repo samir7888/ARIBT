@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import  DOMPurify from 'dompurify';
-import React from 'react'
+import DOMPurify from "dompurify";
 
-const BlogBody = ({description}:{description:string}) => {
+
+const BlogBody = ({ description }: { description: string }) => {
   return (
     <div
-              className="mb-4 text-gray-700 prose lg:prose-xl "
-              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
-            />
-  )
-}
+      className="prose lg:prose-xl "
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
+    />
+  );
+};
 
-export default BlogBody
+export default BlogBody;

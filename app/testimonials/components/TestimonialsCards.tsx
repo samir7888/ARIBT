@@ -1,16 +1,8 @@
 
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/image";
-import { testimonials } from "./testimonialsData";
-
-interface Testimonial {
-  id: Number;
-  name: string;
-  position: string;
-  image: string;
-  social: string;
-  message: string;
-}
+import { Testimonial } from "./Types/TestimonialsTypes";
+import BlogBody from "../../blogs/[id]/components/BlogBody";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <section
@@ -37,36 +29,29 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
             <p className="text-sm text-gray-500">{testimonial.position}</p>
           </div>
         </div>
-        <a
+        {/* <a
           href={testimonial.social}
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-blue-600 transition"
         >
           <FaFacebook size={28} />
-        </a>
+        </a> */}
       </div>
 
       {/* Message */}
-      <p
+      <div
         style={{ fontSize: "clamp(0.7rem, 0.9vw, 1rem)" }}
         className="mt-5 text-sm text-brand-primary leading-relaxed"
       >
-        “{testimonial.message}”
-      </p>
+        <BlogBody description={testimonial.description}/>
+        
+      </div>
     </div>
   </section>
 );
 
-// Grid rendering
-const TestimonialGrid = () => (
-  <div className="container mx-auto px-4 py-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {testimonials.map((t) => (
-        <TestimonialCard key={t.id} testimonial={t} />
-      ))}
-    </div>
-  </div>
-);
 
-export default TestimonialGrid;
+
+
+export default TestimonialCard;
