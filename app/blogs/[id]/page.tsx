@@ -39,7 +39,15 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
   return (
     <div className="min-h-screen mx-auto">
       <BlogHeroSection title="Blog Details" />
-      <Suspense fallback={<div className="container !max-w-[800px] min-h-screen mx-auto flex flex-col gap-12 "><SkeletonCard/><SkeletonCard/><SkeletonCard/></div>}>
+      <Suspense
+        fallback={
+          <div className="container !max-w-[800px] min-h-screen mx-auto flex flex-col gap-12 ">
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+          </div>
+        }
+      >
         <BlogDetails id={id} />
       </Suspense>
       <FooterSection />
@@ -56,7 +64,6 @@ export async function generateStaticParams() {
   }));
 }
 
-
 export function SkeletonCard() {
   return (
     <div className="flex flex-col space-y-3 ">
@@ -66,8 +73,5 @@ export function SkeletonCard() {
         <Skeleton className="h-4 w-[200px] bg-gray-200" />
       </div>
     </div>
-  )
+  );
 }
-
-
-

@@ -54,21 +54,6 @@ const BlogDetails = async ({ id }: { id: string }) => {
 
       <div className="mt-10">
         <article>
-          {/* Lorem ipsum header section */}
-          <div className="mb-8">
-            <p className="text-gray-700  mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              ullamcorper mattis lorem non. Ultrices praesent amet ipsum justo
-              massa. Eu dolor aliquot risus gravida nunc at feugiat consequat
-              purus. Non massa enim vitae duis mattis. Vel in ultricies vel
-              fringilla.
-            </p>
-
-            {/* <h1 className="text-2xl font-bold mb-6">{filterBlog.title}</h1> */}
-
-            {/* <p className="text-gray-700 mb-8">{filterBlog.Technology}</p> */}
-          </div>
-
           {/* First image */}
           <div className="mb-8">
             <div className="relative w-full h-64 md:h-80">

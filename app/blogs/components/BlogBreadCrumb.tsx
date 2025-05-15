@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,6 +8,7 @@ import {
 } from "@/components/components/ui/breadcrumb";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { capitalizeFirstLetter } from "../../../libs/CapitalizeWord";
 
 const BreadCrumb = () => {
   const pathname = usePathname();
@@ -18,11 +19,18 @@ const BreadCrumb = () => {
     >
       <BreadcrumbList>
         <BreadcrumbItem className="bg-brand-primary px-3 py-2  rounded-4xl ">
-          <Link className="pt-2 tracking-wider" href={`/${pathname.split('/')[1]}`}>{pathname.split('/')[1]}</Link>
+          <Link
+            className="pt-2 tracking-wider"
+            href={`/${pathname.split("/")[1]}`}
+          >
+            {capitalizeFirstLetter(pathname.split("/")[1])}
+          </Link>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <Link className="pt-2 tracking-wider" href="/">Home</Link>
+          <Link className="pt-2 tracking-wider" href="/">
+            Home
+          </Link>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

@@ -7,7 +7,7 @@ const ProductBody = () => {
   return (
     <div className="container  mx-auto space-y-4 w-[70%]">
       <div className="flex justify-between items-center">
-        <h2 className="font-aeonik text-2xl   py-5">Our recents Products</h2>
+        <h2 className="font-aeonik text-2xl   py-5">Our recents Services</h2>
         <button className="font-noir h-12 px-5 pt-1 border border-brand bg-gradient-to-r from-brand-light to-brand text-white flex items-center rounded-full transition-all duration-700 ease-in-out hover:bg-gradient-to-l hover:from-brand-light hover:to-brand">
           Show All
           <ChevronRight className="mb-1 ml-1 w-4" />
