@@ -4,14 +4,8 @@ import { Copy, Link } from "lucide-react";
 import BlogBody from "./BlogBody";
 import { Metadata } from "next";
 
-
-
-
-
-
-
 const BlogDetails = async ({ id }: { id: string }) => {
-   const filterBlog = (await serverFetch(`blog/${id}`)) as BlogPost;
+  const filterBlog = (await serverFetch(`blog/${id}`)) as BlogPost;
   if (!filterBlog) {
     return <div>No Details of that blog available</div>;
   }
@@ -25,7 +19,6 @@ const BlogDetails = async ({ id }: { id: string }) => {
             {filterBlog?.excerpt}
           </p> */}
           <div className="flex gap-3 pt-6">
-
             {/* profile image */}
             <div className="rounded-full w-10 h-10 overflow-hidden">
               <Image
@@ -44,7 +37,11 @@ const BlogDetails = async ({ id }: { id: string }) => {
         </div>
         <div className=" min-h-48 mt-10 md:mt-0 w-full md:w-1/2 px-9 overflow-hidden bg-gray-100">
           <Image
-            src={filterBlog.image ? `${filterBlog.image}` : 'https://placehold.co/600x400/png'}
+            src={
+              filterBlog.image
+                ? `${filterBlog.image}`
+                : "https://placehold.co/600x400/png"
+            }
             alt={filterBlog?.title}
             width={400}
             height={1500}
@@ -215,6 +212,3 @@ const BlogDetails = async ({ id }: { id: string }) => {
 };
 
 export default BlogDetails;
-
-
-

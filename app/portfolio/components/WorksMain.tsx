@@ -2,11 +2,14 @@ import React from 'react'
 import LatestWorks from './LatestWorks'
 import { Pagination } from '@/components/components/ui/pagination'
 import WorkPagination from './WorkPagination'
+import { serverFetch } from '../../../libs/server-fetch'
+import { PortfolioList } from '../Types/portfolio-types'
 
-const WorksMain = () => {
+const WorksMain = async () => {
+  const portfolios = await serverFetch<PortfolioList>('portfolio');
   return (
     <div className='container mx-auto py-15 flex flex-col w-4/5 '>
-        <LatestWorks />
+        <LatestWorks portfolioData={portfolios || []} />
         <WorkPagination />
     </div>
   )

@@ -3,8 +3,17 @@ import logo from "../../public/logo.png";
 // import { Link } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { serverFetch } from "../../libs/server-fetch";
+import {
+  ContactInfo,
+  ContactInfoList,
+} from "../../app/contact/components/Types/contact";
+import ContactDetails from "./components/ContactDetails";
+import { Suspense } from "react";
 
-const FooterCard = () => {
+const FooterCard = async () => {
+  const ContactsInfo = (await serverFetch("contact")) as ContactInfoList;
+  console.log(ContactsInfo);
   return (
     <div className="relative bg-white h-[600px] px-0 md:px-4 mt-28 rounded-t-3xl flex flex-col justify-between ">
       {/* Background image - fixed to cover entire section */}
@@ -18,13 +27,21 @@ const FooterCard = () => {
           <div className="">
             <Image src={logo} alt="aribt logo" width={200} height={100} />
           </div>
-          <p className="text-sm">
-            Cassy Digital, a school software that helps the business efficently
+          <p style={{ fontSize: "clamp(0.8rem, 0.9vw, 1rem)" }} className="">
+            At Abhyam Robotics Institution of Business and Technology, we are
+            dedicated to bringing your digital vision to life. Our expert team
+            combines creativity and cutting-edge technology to deliver
+            personalized web development solutions that help your business
+            thrive online. Partner with us for innovative, tailored, and
+            impactful digital experiences.
           </p>
         </div>
-        <div className="flex justify-around w-full md:w-3/5 ">
+        <div className="flex flex-col gap-4 md:flex-row justify-around w-full md:w-3/5 ">
+        <div className="flex gap-6 justify-around">
+
+        
           <div className="space-y-5">
-           <h2 className="text-black text-xl">About</h2>
+            <h2 className="text-black text-xl">About</h2>
             <Link href="/testimonials" className="block cursor-pointer">
               Testimonials
             </Link>
@@ -53,33 +70,12 @@ const FooterCard = () => {
               Examples
             </a>
           </div>
-          <div className="space-y-5">
-            <h2 className="text-black">Get in touch</h2>
-            <p>say-hello@cassy.com</p>
-            <span className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaFacebook className="h-6 w-6" />
-              </a>
-              <a
-                href="https://example.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLink className="h-6 w-6" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin className="h-6 w-6" />
-              </a>
-            </span>
-          </div>
+</div>
+          <Suspense>
+            {ContactsInfo.map((contact) => (
+              <ContactDetails key={contact.id} contact={contact} />
+            ))}
+          </Suspense>
         </div>
       </div>
 

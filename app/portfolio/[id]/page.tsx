@@ -2,7 +2,7 @@ import React from "react";
 import BlogHeroSection from "../../blogs/components/BlogHeroSection";
 import WorkDivider from "./components/WorkDivider";
 import OverflowCard from "./components/OverflowCard";
-import BlogPage from "../../blogs/[id]/components/Blog";
+
 import FooterSection from "../../../components/Footer/FooterSection";
 
 const page = () => {
@@ -12,7 +12,7 @@ const page = () => {
       <WorkDivider />
       <OverflowCard />
       <div className=" w-2/5 py-6 mx-auto">
-        <BlogPage />
+        {/* <BlogPage /> */}
       </div>
       <FooterSection />
     </div>

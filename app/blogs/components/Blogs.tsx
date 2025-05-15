@@ -53,9 +53,9 @@ export default async function Blogs({
                   <span>{post.date}</span>
                 </div>
                 <Link href={`/blogs/${post.id}`}>
-                  <h3 className="text-xl font-medium mb-2 flex items-center justify-between">
+                  <h3 className="text-xl  font-medium mb-2 flex items-center justify-between ">
                     {post.title}
-                    <ArrowUpRight className="h-6 w-6 text-black" />
+                    <ArrowUpRight className="h-6 min-w-6 text-black" />
                   </h3>
                 </Link>
 

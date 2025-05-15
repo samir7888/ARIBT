@@ -2,11 +2,11 @@
 
 const url = process.env.API_URL;
 
-export async function serverFetch(path: string) {
-    console.log('path',path)
+export async function serverFetch<T>(path: string): Promise<T | null> {
+  console.log('path', path)
   try {
     if (!url) throw new Error("API_URL is not defined in environment variables.");
-console.log(`${url}${path}`)
+    console.log(`${url}${path}`)
     const response = await fetch(`${url}${path}`, {
       // Optional: you can set method, headers, cache, etc.
       method: 'GET',
@@ -19,7 +19,7 @@ console.log(`${url}${path}`)
       return null;
     }
 
-    return await response.json();
+    return response.json();
   } catch (error) {
     console.error('Server fetch error:', error);
     return null;

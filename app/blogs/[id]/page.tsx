@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Suspense } from "react";
 import BlogHeroSection from "../components/BlogHeroSection";
 import BlogDetails from "./components/BlogDetails";
 import FooterSection from "../../../components/Footer/FooterSection";
 import { Metadata } from "next";
 import { serverFetch } from "../../../libs/server-fetch";
+import { Skeleton } from "@/components/components/ui/skeleton";
 
 type Props = {
   params: {
@@ -11,16 +12,14 @@ type Props = {
   };
 };
 
-
-
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  
-   const filterBlog = (await serverFetch(`blog/${id}`)) as BlogPost;
+
+  const filterBlog = (await serverFetch(`blog/${id}`)) as BlogPost;
 
   if (!filterBlog)
     return {
@@ -40,7 +39,9 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
   return (
     <div className="min-h-screen mx-auto">
       <BlogHeroSection title="Blog Details" />
-      <BlogDetails id={id} />
+      <Suspense fallback={<div className="container !max-w-[800px] min-h-screen mx-auto flex flex-col gap-12 "><SkeletonCard/><SkeletonCard/><SkeletonCard/></div>}>
+        <BlogDetails id={id} />
+      </Suspense>
       <FooterSection />
     </div>
   );
@@ -48,12 +49,25 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
 
 export default page;
 
-
-
 export async function generateStaticParams() {
-  const blogs = (await serverFetch('blog')) as BlogPost[];
+  const blogs = (await serverFetch("blog")) as BlogPost[];
   return blogs.map((d) => ({
     id: String(d.id),
   }));
 }
+
+
+export function SkeletonCard() {
+  return (
+    <div className="flex flex-col space-y-3 ">
+      <Skeleton className="h-[125px] w-[550px] rounded-xl bg-gray-200" />
+      <div className="space-y-2">
+        <Skeleton className="h-4 w-[250px] bg-gray-200" />
+        <Skeleton className="h-4 w-[200px] bg-gray-200" />
+      </div>
+    </div>
+  )
+}
+
+
 

@@ -3,57 +3,11 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Recentworks from "./Recentworks";
 import Link from "next/link";
+import { PortfolioList } from "../Types/portfolio-types";
 
 // Define types for our works data
-type WorkTag = "Figma" | "Photoshop" | "Web Design" | "Branding";
 
-export type Work = {
-  id: number;
-  title: string;
-  subtitle?: string;
-  client: string;
-  tags: WorkTag[];
-  imageSrc: string;
-  link?: string;
-};
-
-// Sample data for latest works
-const works: Work[] = [
-  {
-    id: 1,
-    title: "Cassy Hero - Landingpage",
-    client: "Akshar College",
-    tags: ["Branding", "Web Design", "Figma", "Photoshop"],
-    imageSrc:
-      "https://images.pexels.com/photos/29940748/pexels-photo-29940748/free-photo-of-scenic-mountain-landscape-in-french-alps.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-  {
-    id: 2,
-    title: "The largest school management solution",
-
-    client: "Akshar College",
-    tags: ["Branding", "Web Design", "Figma", "Photoshop"],
-    imageSrc:
-      "https://images.pexels.com/photos/29940748/pexels-photo-29940748/free-photo-of-scenic-mountain-landscape-in-french-alps.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-  {
-    id: 3,
-    title: "Educational Platform",
-    client: "Akshar College",
-    tags: ["Figma", "Photoshop", "Branding", "Web Design"],
-    imageSrc:
-      "https://images.pexels.com/photos/29940748/pexels-photo-29940748/free-photo-of-scenic-mountain-landscape-in-french-alps.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-  {
-    id: 4,
-    title: "Learning Management System",
-    client: "Akshar College",
-    tags: ["Branding", "Web Design", "Figma", "Photoshop"],
-    imageSrc:
-      "https://images.pexels.com/photos/29940748/pexels-photo-29940748/free-photo-of-scenic-mountain-landscape-in-french-alps.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-];
-const LatestWorks: React.FC = () => {
+const LatestWorks = ({ portfolioData }: { portfolioData: PortfolioList }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -82,7 +36,7 @@ const LatestWorks: React.FC = () => {
   }, []);
 
   const nextSlide = () => {
-    if (currentIndex < works.length - visibleItems) {
+    if (currentIndex < portfolioData.length - visibleItems) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -106,7 +60,7 @@ const LatestWorks: React.FC = () => {
               transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
             }}
           >
-            {works.map((work,index) => (
+            {portfolioData.map((work,index) => (
               <div
                 key={work.id}
                 className="flex-shrink-0 px-2"
@@ -115,7 +69,7 @@ const LatestWorks: React.FC = () => {
                 <div className="p-4 relative bg-gray-100 rounded-2xl shadow-md overflow-hidden h-full">
                   <div className=" h-48 sm:h-56 md:h-64">
                     <Image
-                      src={work.imageSrc}
+                      src={work?.coverImage}
                       alt={work.title}
                       fill
                       className="object-cover p-1 rounded-2xl"
@@ -128,21 +82,21 @@ const LatestWorks: React.FC = () => {
                     <div className="flex items-center mb-4">
                       <div className="mr-auto">
                         <h3 className="font-semibold text-md ">
-                          {work.client}
+                          {work?.title}
                         </h3>
-                        {work.subtitle && (
-                          <p className="text-gray-500">{work.subtitle}</p>
-                        )}
+                        {/* {work?.title && (
+                          <p className="text-gray-500">{work?.title}</p>
+                        )} */}
 
                       
                       </div>
                       <Link href={`/portfolio/${work.id}`}>
-                        <button className="bg-white text-gray-400 px-4 py-1 rounded  hover:bg-gray-50 transition-colors">
+                        <button className="bg-white text-gray-400 px-4 py-1 rounded cursor-pointer  hover:bg-gray-50 ">
                           View
                         </button>
                       </Link>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    {/* <div className="flex flex-wrap gap-2">
                       {work.tags.slice(0, 2).map((tag, index) => (
                         <span
                           key={index}
@@ -151,7 +105,7 @@ const LatestWorks: React.FC = () => {
                           {tag}
                         </span>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
 
 
@@ -191,9 +145,9 @@ const LatestWorks: React.FC = () => {
 
         <button
           onClick={nextSlide}
-          disabled={currentIndex >= works.length - visibleItems}
+          disabled={currentIndex >= portfolioData.length - visibleItems}
           className={`absolute top-1/2 -translate-y-1/2 -right-4 w-10 h-10 flex items-center justify-center rounded-full bg-brand-primary shadow-md z-10 ${
-            currentIndex >= works.length - visibleItems
+            currentIndex >= portfolioData.length - visibleItems
               ? "text-gray-300 cursor-not-allowed"
               : "text-white hover:bg-white hover:text-black"
           }`}
@@ -216,7 +170,7 @@ const LatestWorks: React.FC = () => {
         </button>
       </div>
 
-      <Recentworks works={works} />
+      <Recentworks works={portfolioData} />
     </div>
   );
 };
