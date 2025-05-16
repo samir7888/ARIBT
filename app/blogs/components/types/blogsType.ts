@@ -6,7 +6,8 @@ type Technology = {
   title: string;
 };
 
-type BlogPost = {
+
+export type BlogPost = {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -20,4 +21,4 @@ type BlogPost = {
 };
 
 
-type BlogPostList = BlogPost[];
+export type BlogPostList = BlogPost[];

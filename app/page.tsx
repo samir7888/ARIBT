@@ -30,7 +30,6 @@ export default function Home() {
       <TeamSection />
       <TestimonialSection />
       <BlogSection />
-      <FooterSection />
     </div>
   );
 }

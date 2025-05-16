@@ -8,13 +8,13 @@ import Link from "next/link";
 import ServiceCard from "../cards/serviceCard";
 import ServiceBody from "../../services/components/ServicesBody";
 
-const ServicesSection = async({
+const ServicesSection = async ({
   sectionTitle = "What we Offer?",
   sectionSubtitle = "Focus your attention on developing your business, and let us work for your overall school management headache",
 }) => {
   const services = await serverFetch<ServiceList>("category");
   if (!services) {
-    return <>No services available</>
+    return <>No services available</>;
   }
   return (
     <section className="my-12 z-0 container mx-auto  ">
@@ -36,7 +36,7 @@ const ServicesSection = async({
         {/* Second row */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <BorderImage serviceData={services[2]}  />
+          <BorderImage serviceData={services[2]} />
 
           <BorderImage serviceData={services[4]} />
           <BorderImage serviceData={services[5]} />
@@ -44,8 +44,8 @@ const ServicesSection = async({
       </div>
 
       {/* View All Button */}
-      <Link href={'/services'}>
-      <ButtonEffect1 word="View All" />
+      <Link href={"/services"}>
+        <ButtonEffect1 word="View All" />
       </Link>
     </section>
   );
@@ -53,7 +53,7 @@ const ServicesSection = async({
 
 export default ServicesSection;
 
-function BorderImage({serviceData}:{serviceData:Service}) {
+function BorderImage({ serviceData }: { serviceData: Service }) {
   return (
     <section
       className="p-[3px] rounded-2xl "

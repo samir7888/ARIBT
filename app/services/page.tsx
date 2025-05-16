@@ -4,9 +4,8 @@ import ProductBody from "./components/ProductBody";
 import FooterSection from "../../components/Footer/FooterSection";
 
 import { serverFetch } from "../../libs/server-fetch";
-import {  ServiceList } from "./Types/service-types";
+import { ServiceList } from "./Types/service-types";
 import { ServiceCards } from "./components/ProductsCards";
-
 
 const page = async () => {
   const services = await serverFetch<ServiceList>("category");

@@ -4,71 +4,66 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
 import Link from "next/link";
+import { serverFetch } from "../../../libs/server-fetch";
+import { BlogPost, BlogPostList } from "../../blogs/components/types/blogsType";
+import BlogBody from "../../blogs/[id]/components/BlogBody";
 
 // Mock blog data
-const blogData = [
-  {
-    id: 1,
-    title: "UX review presentations",
-    description:
-      "How do you create compelling presentations that wow your colleagues and impress your managers?",
-    image:
-      "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    author: "Olivia Rhye",
-    date: "20 Jan 2024",
-    categories: ["Design", "Research", "Presentation"],
-  },
-  {
-    id: 2,
-    title: "Migrating to Linear 101",
-    description:
-      "Linear helps streamline software projects, sprints, and others.",
-    image:
-      "https://images.pexels.com/photos/3601081/pexels-photo-3601081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    author: "Phoenix Baker",
-    date: "19 Jan 2024",
-    categories: ["Design", "Research"],
-  },
-  {
-    id: 3,
-    title: "Building your API Stack",
-    description:
-      "The right APIs can make development faster, deployment easier, and user experience better.",
-    image:
-      "https://images.pexels.com/photos/965117/pexels-photo-965117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    author: "Lana Steiner",
-    date: "18 Jan 2024",
-    categories: ["Development", "API"],
-  },
-  {
-    id: 4,
-    title: "Migrating to Linear 101",
-    description:
-      "Linear helps streamline software projects, sprints, and others.",
-    image:
-      "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    author: "Phoenix Baker",
-    date: "19 Jan 2024",
-    categories: ["Design", "Research"],
-  },
-];
+// const blogData = [
+//   {
+//     id: 1,
+//     title: "UX review presentations",
+//     description:
+//       "How do you create compelling presentations that wow your colleagues and impress your managers?",
+//     image:
+//       "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//     author: "Olivia Rhye",
+//     date: "20 Jan 2024",
+//     categories: ["Design", "Research", "Presentation"],
+//   },
+//   {
+//     id: 2,
+//     title: "Migrating to Linear 101",
+//     description:
+//       "Linear helps streamline software projects, sprints, and others.",
+//     image:
+//       "https://images.pexels.com/photos/3601081/pexels-photo-3601081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//     author: "Phoenix Baker",
+//     date: "19 Jan 2024",
+//     categories: ["Design", "Research"],
+//   },
+//   {
+//     id: 3,
+//     title: "Building your API Stack",
+//     description:
+//       "The right APIs can make development faster, deployment easier, and user experience better.",
+//     image:
+//       "https://images.pexels.com/photos/965117/pexels-photo-965117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//     author: "Lana Steiner",
+//     date: "18 Jan 2024",
+//     categories: ["Development", "API"],
+//   },
+//   {
+//     id: 4,
+//     title: "Migrating to Linear 101",
+//     description:
+//       "Linear helps streamline software projects, sprints, and others.",
+//     image:
+//       "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//     author: "Phoenix Baker",
+//     date: "19 Jan 2024",
+//     categories: ["Design", "Research"],
+//   },
+// ];
 
 // Blog Card Component
-interface Blog {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  author: string;
-  date: string;
-  categories: string[];
-}
+
 
 const BlogCard = ({
   blog,
   orientation = "vertical",
 }: {
-  blog: Blog;
+  blog: BlogPost;
   orientation?: "vertical" | "horizontal";
 }) => {
   if (orientation === "horizontal") {
@@ -77,7 +72,7 @@ const BlogCard = ({
           <div className="md:w-2/5 h-64 rounded-2xl  ">
         <Link href={`/blog/${blog.id}`}>
             <Image
-              src={blog.image}
+              src={blog.image || ''}
               width={600}
               height={400}
               alt={blog.title}
@@ -96,13 +91,13 @@ const BlogCard = ({
             <Link href={`/blog/${blog.id}`}>
             <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
             </Link>
-            <p className="text-gray-600 mb-6">{blog.description}</p>
+            {/* <p className="text-gray-600 mb-6">{blog.description}</p> */}
           </div>
-          <div className="flex flex-wrap gap-2">
-            {blog.categories.map((category, index) => (
-              <CategoryColors key={index} category={category} />
+          {/* <div className="flex flex-wrap gap-2">
+            {blog.Technology.map((tech, index) => (
+              <CategoryColors key={index} category={typeof tech === "string" ? tech : tech.title ?? String(tech)} />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     );
@@ -113,7 +108,7 @@ const BlogCard = ({
       <div className=" h-48">
         <Link href={`/blog/${blog.id}`}>
         <Image
-          src={blog.image}
+          src={blog.image || 'https://placehold.co/600x400/png'}
           width={600}
           height={400}
           alt={blog.title}
@@ -132,18 +127,22 @@ const BlogCard = ({
           {blog.title}
         </h3>
         </Link>
-        <p className="text-gray-600 mb-6 flex-1">{blog.description}</p>
-        <div className="flex flex-wrap gap-2">
+        {/* <div className="text-gray-600 mb-6 flex-1"><BlogBody description={blog.description} /></div> */}
+        {/* <div className="flex flex-wrap gap-2">
           {blog.categories.map((category, index) => (
             <CategoryColors key={index} category={category} />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
-const BlogSection = () => {
+const BlogSection = async() => {
+  const  blogData = await serverFetch<BlogPostList>('blog');
+  if (!blogData) {
+    return <div>No blogs available</div>
+  }
   return (
     <div className="bg-gray-50 py-12">
       <section className="container mx-auto">

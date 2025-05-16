@@ -4,9 +4,12 @@ import Image from "next/image";
 import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
 import Link from "next/link";
 import { serverFetch } from "../../../libs/server-fetch";
-import { Portfolio, PortfolioList } from "../../portfolio/Types/portfolio-types";
+import {
+  Portfolio,
+  PortfolioList,
+} from "../../portfolio/Types/portfolio-types";
 
-const FacilitySection = async({
+const FacilitySection = async ({
   sectionTitle = "Our Recent Works",
   sectionSubtitle = "Focus your attention on developing your business, and let us work for your overall school management headache",
   services = [],
@@ -52,10 +55,10 @@ const FacilitySection = async({
   // ];
 
   // const displayServices = services.length > 0 ? services : defaultServices;
-const portfolios = await serverFetch<PortfolioList>('portfolio');
-if (!portfolios) {
-  return <div>No portfolio available</div>
-}
+  const portfolios = await serverFetch<PortfolioList>("portfolio");
+  if (!portfolios) {
+    return <div>No portfolio available</div>;
+  }
   return (
     <div className="bg-[#F7FFFF] my-12">
       <section className="container mx-auto ">
@@ -71,23 +74,23 @@ if (!portfolios) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-full">
             <WorkCard portfolioData={portfolios[0]} />
 
-            <WorkCard portfolioData={portfolios[1]}/>
+            <WorkCard portfolioData={portfolios[1]} />
           </div>
 
           {/* second row */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-full">
             <div className="col-span-2">
-              <WorkCard portfolioData={portfolios[2]}/>
+              <WorkCard portfolioData={portfolios[2]} />
             </div>
 
-            <WorkCard portfolioData={portfolios[3]}/>
+            <WorkCard portfolioData={portfolios[3]} />
           </div>
           {/* Third row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-full">
-            <WorkCard portfolioData={portfolios[4]}/>
-            <WorkCard portfolioData={portfolios[5]}/>
-            <WorkCard portfolioData={portfolios[6]}/>
+            <WorkCard portfolioData={portfolios[4]} />
+            <WorkCard portfolioData={portfolios[5]} />
+            <WorkCard portfolioData={portfolios[6]} />
           </div>
         </div>
 
@@ -100,14 +103,14 @@ if (!portfolios) {
   );
 };
 
-function WorkCard({portfolioData}:{portfolioData:Portfolio}) {
+function WorkCard({ portfolioData }: { portfolioData: Portfolio }) {
   return (
-    <div className="relative bg-gray-200 p-3 rounded-xl h-full">
+    <div className="relative bg-gray-100 p-3 rounded-xl h-full">
       <Image
         src={portfolioData.coverImage}
         alt={portfolioData.title}
         width={1200}
-        height={600}
+        height={1000}
         className="object-cover rounded-xl"
       />{" "}
       <div className="absolute left-5 right-5 bottom-6 min-h-28  bg-white rounded-xl p-4">
