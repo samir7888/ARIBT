@@ -6,13 +6,11 @@ export async function serverFetch<T>(path: string): Promise<T | null> {
   console.log('path', path)
   try {
     if (!url) throw new Error("API_URL is not defined in environment variables.");
-    console.log(`${url}${path}`)
     const response = await fetch(`${url}${path}`, {
       // Optional: you can set method, headers, cache, etc.
       method: 'GET',
       cache: 'no-store', // prevents stale data (optional, adjust if needed)
     });
-    console.log(response)
 
     if (!response.ok) {
       console.error(`Fetch failed: ${response.status} ${response.statusText}`);

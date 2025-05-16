@@ -52,10 +52,11 @@ const HeroSection = () => {
               <span className="absolute inset-0 bg-gradient-to-l from-brand-light to-brand transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 z-10" />
             </button>
           </Link>
-
-          <button className="px-5 py-2 pt-4 bg-white text-brand-primary rounded-full transition-colors duration-700 ease-in-out hover:text-white hover:bg-brand cursor-pointer">
-            Explore Services
-          </button>
+          <Link href={"/services"}>
+            <button className="px-5 py-3 pt-5 bg-white text-brand-primary rounded-full transition-colors duration-700 ease-in-out hover:text-white hover:bg-brand cursor-pointer">
+              Explore Services
+            </button>
+          </Link>
         </div>
 
         {/* Image */}

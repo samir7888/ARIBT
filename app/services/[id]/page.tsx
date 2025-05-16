@@ -4,10 +4,24 @@ import { Productcard } from "@/components/sections/product-section";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
-import BlogPage from "../../blogs/[id]/components/Blog";
 import FooterSection from "../../../components/Footer/FooterSection";
+import BlogBody from "../../blogs/[id]/components/BlogBody";
+import { serverFetch } from "../../../libs/server-fetch";
+import { Service } from "../Types/service-types";
+import ServiceBody, { ServiceBodyDetails } from "../components/ServicesBody";
 
-const page = () => {
+
+type Props = {
+  params: {
+    id: string
+  };
+}
+
+
+const page = async(props: { params: Promise<Props["params"]> }) => {
+  const {id} =await props.params;
+  const services = await serverFetch<Service>(`category/${id}`);
+  console.log(services)
   return (
     <div className="min-h-screen mx-auto font-aeonik">
       <BlogHeroSection title="Our Products" />
@@ -20,17 +34,18 @@ const page = () => {
                 className="text-3xl w-4/5 font-bold text-gray-800"
                 style={{ fontSize: "clamp(2rem, 2.5vw, 2.9rem)" }}
               >
-                Abhyam School Management System
+                {services?.title}
               </h2>
-              <p
+
+              {/* todo: need subtitle */}
+              {/* <p
                 className="w-4/5 text-gray-600"
                 style={{ fontSize: "clamp(0.9rem, 1.1vw, 1.5rem)" }}
               >
-                JavaScript frameworks make development easy with extensive
-                features and functionalities.
-              </p>
+                {services.subtitle}
+              </p> */}
 
-              {/* Feature cards replacing the read more button */}
+              {/* todo: need features of the services*/}
               <div className="bg-brand-primary rounded-lg p-6 mt-6 text-white">
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
@@ -71,22 +86,21 @@ const page = () => {
           </div>
 
           {/* Right Card */}
-          <div className="rounded-xl bg-gray-200 p-6">
-            <div className="overflow-hidden">
-              <Image
-                src="https://images.pexels.com/photos/31775324/pexels-photo-31775324/free-photo-of-close-up-of-car-dashboard-with-digital-display.jpeg?auto=compress&cs=tinysrgb&w=600"
-                width={1200}
-                height={500}
-                alt=""
-                className="bg-cover w-full rounded-xl "
-              />
-            </div>
-          </div>
+           <div className="p-8 bg-gray-200 rounded-xl">
+                  <div className="relative aspect-square ">
+                    <Image
+                      src={services?.file || ''}
+                      fill
+                      alt={services?.title || ''}
+                      className="object-cover aspect-auto  rounded-2xl "
+                    />
+                  </div>
+                </div>
         </div>
       </div>
-      <div className=" w-2/5 py-6 mx-auto">
-        <BlogPage />
-      </div>
+        <div className="mb-8 ">
+            <ServiceBodyDetails description={services?.description || ''} />
+          </div>
       <FooterSection />
     </div>
   );

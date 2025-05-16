@@ -1,6 +1,6 @@
 import React from 'react'
 import LatestWorks from './LatestWorks'
-import { Pagination } from '@/components/components/ui/pagination'
+
 import WorkPagination from './WorkPagination'
 import { serverFetch } from '../../../libs/server-fetch'
 import { PortfolioList } from '../Types/portfolio-types'

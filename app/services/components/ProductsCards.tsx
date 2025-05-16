@@ -22,7 +22,7 @@ export function ServiceCards({ serviceData }: { serviceData: Service }) {
             <ServiceBody description={serviceData.description} />
           </div>
         </div>
-        <Link href={`/products/${serviceData.id}`} className="inline-block">
+        <Link href={`/services/${serviceData.id}`} className="inline-block">
          <ButtonEffect2 />
         </Link>
       </div>

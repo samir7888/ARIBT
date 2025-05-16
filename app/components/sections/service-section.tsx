@@ -2,12 +2,20 @@ import React from "react";
 import TitleCard from "../cards/titleCard";
 import Image from "next/image";
 import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
+import { serverFetch } from "../../../libs/server-fetch";
+import { Service, ServiceList } from "../../services/Types/service-types";
+import Link from "next/link";
+import ServiceCard from "../cards/serviceCard";
+import ServiceBody from "../../services/components/ServicesBody";
 
-const ServicesSection = ({
+const ServicesSection = async({
   sectionTitle = "What we Offer?",
   sectionSubtitle = "Focus your attention on developing your business, and let us work for your overall school management headache",
-  services = [],
 }) => {
+  const services = await serverFetch<ServiceList>("category");
+  if (!services) {
+    return <>No services available</>
+  }
   return (
     <section className="my-12 z-0 container mx-auto  ">
       {/* Section Header */}
@@ -21,29 +29,31 @@ const ServicesSection = ({
       <div className="grid grid-rows-1 md:grid-rows-2 gap-10 bg-gradient-to-b from-gray-50 to-transparent">
         <div className=" h-fit grid grid-cols-1 md:grid-cols-2 gap-6  ">
           {/* card */}
-          <BorderImage />
-          <BorderImage />
+          <BorderImage serviceData={services[0]} />
+          <BorderImage serviceData={services[1]} />
         </div>
 
         {/* Second row */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <BorderImage />
+          <BorderImage serviceData={services[2]}  />
 
-          <BorderImage />
-          <BorderImage />
+          <BorderImage serviceData={services[4]} />
+          <BorderImage serviceData={services[5]} />
         </div>
       </div>
 
       {/* View All Button */}
+      <Link href={'/services'}>
       <ButtonEffect1 word="View All" />
+      </Link>
     </section>
   );
 };
 
 export default ServicesSection;
 
-function BorderImage() {
+function BorderImage({serviceData}:{serviceData:Service}) {
   return (
     <section
       className="p-[3px] rounded-2xl "
@@ -64,7 +74,7 @@ function BorderImage() {
           }}
         >
           <Image
-            src="https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src={serviceData.file}
             alt=""
             width={1000}
             height={500}
@@ -79,15 +89,14 @@ function BorderImage() {
             style={{ fontSize: "clamp(1rem, 1.2vw, 2rem)" }}
             className=" font-semibold tracking-wide"
           >
-            Mobile app Development
+            {serviceData.title}
           </h2>
-          <p
+          <div
             className="text-gray-500 tracking-wide pb-4"
             style={{ fontSize: "clamp(0.9rem, 1.1vw, 1.4rem)" }}
           >
-            We design and developed first class website for any it business
-            include crms
-          </p>
+            <ServiceBody description={serviceData.description} />
+          </div>
         </div>
       </div>
     </section>
