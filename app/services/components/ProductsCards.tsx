@@ -1,10 +1,10 @@
-"use client";
-import { useState } from "react";
-import { ChevronRight, Box, PieChart, Menu } from "lucide-react";
+
+import { ChevronRight} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Service } from "../../services/Types/service-types";
 import ServiceBody from "./ServicesBody";
+import ButtonEffect2 from "../../../components/Buttons/ButtonEffect2";
 
 export function ServiceCards({ serviceData }: { serviceData: Service }) {
   return (
@@ -22,13 +22,8 @@ export function ServiceCards({ serviceData }: { serviceData: Service }) {
             <ServiceBody description={serviceData.description} />
           </div>
         </div>
-        <Link href={`/products/1`} className="!w-fit inline">
-          <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300">
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
-              Read more
-            </span>
-            <ChevronRight className="pt-1 w-8 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+        <Link href={`/products/${serviceData.id}`} className="inline-block">
+         <ButtonEffect2 />
         </Link>
       </div>
 

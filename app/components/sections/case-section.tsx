@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import caseImage from "../../../public/caseImage.png";
 import { ChevronRight } from "lucide-react";
+import ButtonEffect2 from "../../../components/Buttons/ButtonEffect2";
+import Link from "next/link";
 
 const CaseStudySection = () => {
   return (
@@ -42,14 +44,9 @@ const CaseStudySection = () => {
               improving efficiency, communication, and education outcomes.
             </p>
           </div>
-          <div className="">
-            <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300 cursor-pointer">
-              <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300">
-                Read more
-              </span>
-              <ChevronRight className="pt-1 w-8 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
-          </div>
+          <Link href={"products"} className="  inline-block">
+            <ButtonEffect2 />
+          </Link>
         </div>
 
         {/* stats */}

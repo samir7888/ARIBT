@@ -4,6 +4,7 @@ import { ChevronRight, Box, PieChart, Menu } from "lucide-react";
 import Image from "next/image";
 import Frame from "../cards/filterCard";
 import Link from "next/link";
+import ButtonEffect2 from "../../../components/Buttons/ButtonEffect2";
 
 // Main product showcase component
 export default function ProductShowcase({
@@ -66,9 +67,9 @@ export default function ProductShowcase({
 export function Productcard() {
   return (
     <div className="border border-gray-200 rounded-2xl container grid grid-cols-1 !p-0 md:grid-cols-2 gap-6 mx-auto ">
-      <div className="flex  flex-col justify-between px-6 h-[520px] ">
+      <div className="order-2 md:order-first p-8">
         <div className="space-y-6 w-[75%]  ">
-          <div>Icon</div>
+          
           <h2 style={{ fontSize: "clamp(2rem, 2vw, 2.5rem)" }}>
             Abhyam School Management System
           </h2>
@@ -81,13 +82,8 @@ export function Productcard() {
             seconds.
           </p>
         </div>
-        <Link href={`/products/1`}>
-          <button className="group text-xl text-black tracking-widest md:pt-10 font-medium flex items-center hover:text-teal-700 transition-all duration-300">
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-teal-700 group-hover:after:w-full after:transition-all after:duration-300 cursor-pointer">
-              Read more
-            </span>
-            <ChevronRight className="pt-1 w-8 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+        <Link href={`/products/1`} className="inline-block ">
+          <ButtonEffect2 />
         </Link>
       </div>
 

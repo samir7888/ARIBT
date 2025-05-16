@@ -10,9 +10,9 @@ const TeamsCard = async () => {
   return (
     <div
       style={{ fontFamily: "Aeonik" }}
-      className="   mx-auto grid grid-rows-2 space-y-12 mt-8"
+      className="   mx-auto grid space-y-12 mt-8"
     >
-      <div className=" mx-auto grid grid-cols-2 md:grid-cols-4 h-fit w-fit gap-8">
+      <div className=" mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-fit w-fit gap-8">
         {/* card */}
 
         {teams &&
@@ -37,13 +37,13 @@ function BorderImage({ teams }: { teams: TeamMember }) {
         className="bg-white flex flex-col"
         style={{ borderRadius: "calc(var(--radius-3xl) - 1px)" }}
       >
-        <div className="max-h-52 max-w-fit overflow-hidden bg-linear-to-b from-gray-100 to-white rounded-2xl">
+        <div className=" aspect-auto max-w-fit overflow-hidden bg-linear-to-b from-gray-100 to-white rounded-2xl">
           <Image
             src={teams.image}
             alt={`Image of ${teams.name} || Teams of ARIBT`}
             width={800}
             height={500}
-            className="bg-center h-full w-full p-2 rounded-2xl "
+            className="object-cover aspect-square p-2 rounded-2xl "
           />
         </div>
         <h3 className="pt-3 pl-2 text-xl tracking-wide font-medium ">
