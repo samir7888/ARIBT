@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import BlogHeroSection from "../components/BlogHeroSection";
 import BlogDetails from "./components/BlogDetails";
-import FooterSection from "../../../components/Footer/FooterSection";
 import { Metadata } from "next";
 import { serverFetch } from "../../../libs/server-fetch";
 import { Skeleton } from "@/components/components/ui/skeleton";
@@ -50,7 +49,6 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
       >
         <BlogDetails id={id} />
       </Suspense>
-      <FooterSection />
     </div>
   );
 };

@@ -3,9 +3,8 @@ import BlogHeroSection from "../../blogs/components/BlogHeroSection";
 import WorkDivider from "./components/WorkDivider";
 import OverflowCard from "./components/OverflowCard";
 
-import FooterSection from "../../../components/Footer/FooterSection";
 import { serverFetch } from "../../../libs/server-fetch";
-import { Portfolio, PortfolioList } from "../Types/portfolio-types";
+import {  PortfolioList } from "../Types/portfolio-types";
 import PortfolioDetails from "./components/PortfolioDetails";
 import { Metadata } from "next";
 
@@ -63,7 +62,6 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
       <div className="w-2/5 py-6 mx-auto">
         <PortfolioDetails portfolio={portfolioDetails || []} />
       </div>
-      <FooterSection />
     </div>
   );
 };

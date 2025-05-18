@@ -2,30 +2,51 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Portfolio } from "../Types/portfolio-types";
+import { cn } from "@/components/lib/utils";
 
-export default function PortfolioCard({ work }: { work: Portfolio }) {
+export default function PortfolioCard({
+  work,
+  orientation = "landscape",
+}: {
+  work: Portfolio;
+  orientation ?: "portrait" | "landscape";
+}) {
   return (
-    <div className="p-2 relative bg-gray-100 rounded-2xl shadow-md h-full">
-      <Link href={`/portfolio/${work?.id}`}>
-        <div className="">
+    <section
+      className="p-[1px] rounded-2xl"
+      style={{
+        background:
+          "linear-gradient(to bottom, var(--color-gray-200), transparent)",
+      }}
+    >
+      <div
+        className="p-2 relative bg-gray-100  shadow-md h-full"
+        style={{ borderRadius: "calc(var(--radius-2xl) - 1px)" }}
+      >
+        <Link
+          href={`/portfolio/${work?.id}`}
+          className={cn(orientation === "portrait" && "absolute inset-0")}
+        >
           <Image
             src={work.coverImage}
             alt={work.title}
             height={500}
             width={800}
-            className="w-full h-auto rounded-2xl"
+            className={cn(
+              "w-full h-auto rounded-2xl",
+              orientation === "portrait" && "h-full object-cover"
+            )}
           />
-        </div>
-      </Link>
-      <div className="absolute left-4 right-4 min-h-28 bottom-4 bg-white/97 shadow-sm rounded-xl p-4">
-        <div className="flex items-center mb-4">
-          <div className="mr-auto">
-            <h3 className="font-semibold text-xl ">{work.title}</h3>
-            {/* {work.subtitle && (
+        </Link>
+        <div className="absolute left-4 right-4 min-h-28 bottom-4 bg-white shadow-sm rounded-xl p-4">
+          <div className="flex items-center mb-4">
+            <div className="mr-auto">
+              <h3 className="font-semibold text-xl ">{work.title}</h3>
+              {/* {work.subtitle && (
                         <p className="text-gray-500">{work.subtitle}</p>
                       )} */}
 
-            {/* <div className="flex items-center flex-wrap gap-2 text-gray-400">
+              {/* <div className="flex items-center flex-wrap gap-2 text-gray-400">
                         {work.tags.slice(0, 2).map((tag, index) => (
                           <span key={index}>
                             <span className="mb-2 font-bold ">.</span>
@@ -38,9 +59,9 @@ export default function PortfolioCard({ work }: { work: Portfolio }) {
                           </span>
                         ))}
                       </div> */}
+            </div>
           </div>
-        </div>
-        {/* <div className="flex flex-wrap gap-2">
+          {/* <div className="flex flex-wrap gap-2">
                     {work.tags.slice(0, 2).map((tag, index) => (
                       <span
                         key={index}
@@ -50,7 +71,8 @@ export default function PortfolioCard({ work }: { work: Portfolio }) {
                       </span>
                     ))}
                   </div> */}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

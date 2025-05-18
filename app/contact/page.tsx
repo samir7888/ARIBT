@@ -1,6 +1,5 @@
 import React from "react";
 import BlogHeroSection from "../blogs/components/BlogHeroSection";
-import FooterSection from "../../components/Footer/FooterSection";
 import ContactUsPage from "./components/FormPage";
 
 const page = () => {
@@ -40,7 +39,6 @@ const page = () => {
         </div>
       </div>
 
-      <FooterSection />
     </div>
   );
 };

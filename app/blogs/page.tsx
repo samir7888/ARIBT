@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import FooterSection from "../../components/Footer/FooterSection";
 import BlogHeroSection from "./components/BlogHeroSection";
 import Blogs from "./components/Blogs";
 import FilterBlog from "./components/FilterBlog";
@@ -26,7 +25,6 @@ const page = async (props: {
           <Blogs search={search} category={category} />
         </Suspense>
       </div>
-      <FooterSection />
     </div>
   );
 };

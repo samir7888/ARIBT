@@ -72,7 +72,7 @@ const BlogCard = ({
           <div className="md:w-2/5 h-64 rounded-2xl  ">
         <Link href={`/blog/${blog.id}`}>
             <Image
-              src={blog.image || ''}
+              src={blog.image || 'https://placehold.co/600x400/png'}
               width={600}
               height={400}
               alt={blog.title}
@@ -108,7 +108,7 @@ const BlogCard = ({
       <div className=" h-48">
         <Link href={`/blog/${blog.id}`}>
         <Image
-          src={blog.image || 'https://placehold.co/600x400/png'}
+          src={blog.image ?? 'https://placehold.co/600x400/png'}
           width={600}
           height={400}
           alt={blog.title}

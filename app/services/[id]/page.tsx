@@ -1,11 +1,6 @@
 import React from "react";
 import BlogHeroSection from "../../blogs/components/BlogHeroSection";
-import { Productcard } from "@/components/sections/product-section";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
-import FooterSection from "../../../components/Footer/FooterSection";
-import BlogBody from "../../blogs/[id]/components/BlogBody";
 import { serverFetch } from "../../../libs/server-fetch";
 import { Service } from "../Types/service-types";
 import ServiceBody, { ServiceBodyDetails } from "../components/ServicesBody";
@@ -24,7 +19,7 @@ const page = async(props: { params: Promise<Props["params"]> }) => {
   console.log(services)
   return (
     <div className="min-h-screen mx-auto font-aeonik">
-      <BlogHeroSection title="Our Products" />
+      <BlogHeroSection title="Our Services" />
       <div className="py-12 w-full md:w-4/5 mx-auto">
         <div className="rounded-2xl container grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto">
           {/* Left Card */}
@@ -101,7 +96,6 @@ const page = async(props: { params: Promise<Props["params"]> }) => {
         <div className="mb-8 ">
             <ServiceBodyDetails description={services?.description || ''} />
           </div>
-      <FooterSection />
     </div>
   );
 };

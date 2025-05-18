@@ -5,8 +5,11 @@ import { serverFetch } from "../../libs/server-fetch";
 import { Testimonials } from "./components/Types/TestimonialsTypes";
 import TestimonialCard from "./components/TestimonialsCards";
 
-const page = async() => {
-  const testimonials = await serverFetch('/testonomial') as Testimonials;
+const page = async () => {
+  const testimonials = await serverFetch<Testimonials>("/testonomial");
+  if (!testimonials) {
+    return <div>No testimonials available</div>;
+  }
   return (
     <div className="min-h-screen">
       <BlogHeroSection title="Testimonials" />
@@ -17,12 +20,12 @@ const page = async() => {
         {/* <Testimonials /> */}
         <div className="container mx-auto">
           <div className="container mx-auto px-4 py-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {testimonials.map((t) => (
-                  <TestimonialCard key={t.id} testimonial={t} />
-                ))}
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {testimonials.map((t) => (
+                <TestimonialCard key={t.id} testimonial={t} />
+              ))}
             </div>
+          </div>
         </div>
       </div>
       <FooterSection />

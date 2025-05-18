@@ -9,7 +9,7 @@ import {
 import { Mail, Phone } from "lucide-react";
 
 const ContactDetails = ({ contact }: { contact: ContactInfo }) => {
-  console.log("first", contact);
+  
   return (
     <div className="space-y-5">
       <h2 className="text-black">Get in touch</h2>

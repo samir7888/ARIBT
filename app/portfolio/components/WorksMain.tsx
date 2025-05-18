@@ -11,7 +11,7 @@ const WorksMain = async () => {
     <div className="container mx-auto py-15">
       <div className="grid grid-cols-2 gap-5">
         {(portfolios ?? []).map((work) => (
-          <PortfolioCard work={work} />
+          <PortfolioCard  work={work} />
         ))}
       </div>
     </div>

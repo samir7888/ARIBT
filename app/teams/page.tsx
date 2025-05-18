@@ -1,8 +1,6 @@
 import React from "react";
 import BlogHeroSection from "../blogs/components/BlogHeroSection";
 import FooterSection from "../../components/Footer/FooterSection";
-import { serverFetch } from "../../libs/server-fetch";
-import { TeamMemberList } from "./Types/teams-types";
 import TeamsCard from "../../components/TeamsCard";
 import ButtonEffect1 from "../../components/Buttons/ButtonEffect1";
 

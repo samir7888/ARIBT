@@ -8,6 +8,7 @@ import {
   Portfolio,
   PortfolioList,
 } from "../../portfolio/Types/portfolio-types";
+import PortfolioCard from "../../portfolio/components/PortfolioCard";
 
 const FacilitySection = async ({
   sectionTitle = "Our Recent Works",
@@ -72,25 +73,25 @@ const FacilitySection = async ({
         {/* Grid */}
         <div className="grid grid-rows-1  md:grid-rows-3 gap-5 h-fit">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-full">
-            <WorkCard portfolioData={portfolios[0]} />
+            <PortfolioCard work={portfolios[0]} />
 
-            <WorkCard portfolioData={portfolios[1]} />
+            <PortfolioCard work={portfolios[1]} />
           </div>
 
           {/* second row */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-full">
             <div className="col-span-2">
-              <WorkCard portfolioData={portfolios[2]} />
+              <PortfolioCard work={portfolios[2]} />
             </div>
 
-            <WorkCard portfolioData={portfolios[3]} />
+            <PortfolioCard orientation="portrait" work={portfolios[3]} />
           </div>
           {/* Third row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-full">
-            <WorkCard portfolioData={portfolios[4]} />
-            <WorkCard portfolioData={portfolios[5]} />
-            <WorkCard portfolioData={portfolios[6]} />
+            <PortfolioCard orientation="portrait" work={portfolios[4]} />
+            <PortfolioCard orientation="portrait" work={portfolios[5]} />
+            <PortfolioCard orientation="portrait" work={portfolios[6]} />
           </div>
         </div>
 

@@ -1,7 +1,6 @@
 import React from "react";
 import BlogHeroSection from "../blogs/components/BlogHeroSection";
 import CompaniesGrid from "./components/CompaniesCards";
-import FooterSection from "../../components/Footer/FooterSection";
 
 const page = () => {
   return (
@@ -11,7 +10,6 @@ const page = () => {
       <div className="w-full py-8 mx-auto md:w-4/5">
         <CompaniesGrid />
       </div>
-      <FooterSection />
     </div>
   );
 };
