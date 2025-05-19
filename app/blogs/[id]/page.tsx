@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
 
-  const filterBlog = (await serverFetch<BlogPost>(`blog/${id}`)) ;
+  const filterBlog = await serverFetch<BlogPost>(`blog/${id}`);
 
   if (!filterBlog)
     return {
@@ -63,7 +63,7 @@ export default page;
 //   }));
 // }
 
-export function SkeletonCard() {
+function SkeletonCard() {
   return (
     <div className="flex flex-col space-y-3 ">
       <Skeleton className="h-[125px] w-[550px] rounded-xl bg-gray-200" />

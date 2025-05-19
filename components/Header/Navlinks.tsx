@@ -32,6 +32,9 @@ const NavLinks = () => {
           Portfolio
         </Link>
       </div>
+       <Link href="/blogs" className={isActive("/blogs")}>
+        Blogs
+      </Link>
       <div className="relative group">
         <Link
           href="#"
@@ -66,9 +69,7 @@ const NavLinks = () => {
           </div>
         </div>
       </div>
-      <Link href="/blogs" className={isActive("/blogs")}>
-        Blogs
-      </Link>
+     
     </div>
   );
 };
