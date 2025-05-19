@@ -13,10 +13,10 @@ export default function Home() {
       <HeroSection />
       <CaseStudySection />
       {/* DivideSection1 */}
-      <DivideSection title="Trusted by the world startups" />
+      {/* <DivideSection title="Trusted by the world startups" /> */}
       <MiddleSection />
       {/* DivideSection2 */}
-      <DivideSection title="Our companies" />
+      {/* <DivideSection title="Our companies" /> */}
 
       <FacilitySection />
       {/* DivideSection4 */}

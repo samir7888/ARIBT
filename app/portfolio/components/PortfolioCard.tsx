@@ -25,7 +25,7 @@ export default function PortfolioCard({
       >
         <Link
           href={`/portfolio/${work?.id}`}
-          className={cn(orientation === "portrait" && "absolute inset-0")}
+          className={cn(orientation === "portrait" && "md:absolute md:inset-0")}
         >
           <Image
             src={work.coverImage}
@@ -38,13 +38,15 @@ export default function PortfolioCard({
             )}
           />
         </Link>
-        <div className="absolute left-4 right-4 min-h-28 bottom-4 bg-white shadow-sm rounded-xl p-4">
+        <div className="absolute hidden sm:block left-4 right-4 h-auto bottom-4 bg-white shadow-sm rounded-xl p-4">
           <div className="flex items-center mb-4">
             <div className="mr-auto">
-              <h3 className="font-semibold text-xl ">{work.title}</h3>
-              {/* {work.subtitle && (
-                        <p className="text-gray-500">{work.subtitle}</p>
-                      )} */}
+              <Link href={`/portfolio/${work?.id}`}>
+              <h3 className="font-semibold text-sm md:text-xl ">{work.title}</h3>
+              </Link>
+              {work.createdAt && (
+                        <p className="text-brand-primary">{work.year}</p>
+                      )}
 
               {/* <div className="flex items-center flex-wrap gap-2 text-gray-400">
                         {work.tags.slice(0, 2).map((tag, index) => (

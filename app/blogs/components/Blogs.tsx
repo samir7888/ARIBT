@@ -3,22 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import BlogPagination from "./BlogPagination";
 import { serverFetch } from "../../../libs/server-fetch";
+import { BlogPost, BlogPostList } from "./types/blogsType";
+import { BlogsPageProps } from "../page";
 
-export default async function Blogs({
-  search,
-  category,
-}: {
-  search: string;
-  category: string;
-}) {
-  console.log(search, category);
-  const queryParams = new URLSearchParams();
+export default async function Blogs({ searchParams }: BlogsPageProps) {
+  const queryParams = new URLSearchParams(searchParams);
 
   const queryString = queryParams.toString();
   const url = `/blog${queryString ? `?${queryString}` : ""}`;
 
-  const filteredPosts = await serverFetch(url);
-  console.log("first", filteredPosts);
+  const filteredPosts = await serverFetch<BlogPostList>(url);
+  if (!filteredPosts) {
+    return (
+      <div className="text-center py-12">
+        <h3 className="text-xl font-medium text-gray-600">No posts found</h3>
+        <p className="text-gray-500 mt-2">
+          Try adjusting your search or filter to find what you're looking for.
+        </p>
+      </div>
+    );
+  }
   return (
     <div className="space-y-8">
       {/* Blog Posts Title */}
@@ -35,16 +39,20 @@ export default async function Blogs({
               className="flex flex-col rounded-lg overflow-hidden bg-white hover:shadow-md transition-shadow"
             >
               <Link href={`/blogs/${post.id}`}>
-              <div className="relative h-48 w-full overflow-hidden">
-                <Image
-                  src={(post?.image) ? `${post?.image}`:'https://placehold.co/600x400/png' }
-                  alt={post.title}
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </Link>
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={
+                      post?.image
+                        ? `${post?.image}`
+                        : "https://placehold.co/600x400/png"
+                    }
+                    alt={post.title}
+                    width={400}
+                    height={500}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </Link>
 
               <div className="p-4 flex flex-col flex-grow">
                 <div className="flex items-center text-sm text-brand-primary mb-2">
@@ -81,15 +89,6 @@ export default async function Blogs({
             </div>
           ))}
       </div>
-
-      {filteredPosts.length === 0 && (
-        <div className="text-center py-12">
-          <h3 className="text-xl font-medium text-gray-600">No posts found</h3>
-          <p className="text-gray-500 mt-2">
-            Try adjusting your search or filter to find what you're looking for.
-          </p>
-        </div>
-      )}
 
       <BlogPagination />
     </div>

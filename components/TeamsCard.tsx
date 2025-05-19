@@ -7,6 +7,9 @@ import Link from "next/link";
 
 const TeamsCard = async () => {
   const teams = await serverFetch<TeamMemberList>("teammembers");
+  if (!teams) {
+    return <div>No teams data available</div>;
+  }
   return (
     <div
       style={{ fontFamily: "Aeonik" }}
@@ -15,8 +18,9 @@ const TeamsCard = async () => {
       <div className=" mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-fit w-fit gap-8">
         {/* card */}
 
-        {teams &&
-          teams.map((team) => <BorderImage key={team.id} teams={team} />)}
+        {teams.map((team) => (
+          <BorderImage key={team.id} teams={team} />
+        ))}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import {
   FaLinkedin,
   FaLocationArrow,
 } from "react-icons/fa";
-import { Mail, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const ContactDetails = ({ contact }: { contact: ContactInfo }) => {
   
@@ -14,15 +14,19 @@ const ContactDetails = ({ contact }: { contact: ContactInfo }) => {
     <div className="space-y-5">
       <h2 className="text-black">Get in touch</h2>
       <p className="flex gap-3">
-        <Phone />
+        <span className="shrink-0">
+          <Phone />
+          </span>
         {contact.mobileno}
       </p>
       <p className="flex gap-3">
-        <Mail />
+        <span className="shrink-0">
+          <Mail />
+          </span>
         {contact.email}
       </p>
-      <p className="flex gap-3">
-        <FaLocationArrow />
+      <p className="flex  gap-3">
+        <span className="shrink-0"><MapPin /></span>
         {contact.location}
       </p>
       <span className="flex space-x-4">

@@ -5,7 +5,7 @@ import ButtonEffect1 from "../../../components/Buttons/ButtonEffect1";
 import { serverFetch } from "../../../libs/server-fetch";
 import { Service, ServiceList } from "../../services/Types/service-types";
 import Link from "next/link";
-import ServiceCard from "../cards/serviceCard";
+
 import ServiceBody from "../../services/components/ServicesBody";
 
 const ServicesSection = async ({
@@ -66,31 +66,35 @@ function BorderImage({ serviceData }: { serviceData: Service }) {
         className="bg-white flex flex-col  p-5"
         style={{ borderRadius: "calc(var(--radius-2xl) - 3px)" }}
       >
-        <div
-          className="h-56 overflow-hidden shadow-2xl mask-b-from-30%"
-          style={{
-            position: "relative",
-            zIndex: "1",
-          }}
-        >
-          <Image
-            src={serviceData.file}
-            alt=""
-            width={1000}
-            height={500}
-            className="rounded-xl"
-          />
-        </div>
+        <Link href={`/services/${serviceData.id}`}>
+          <div
+            className="h-56 overflow-hidden shadow-2xl mask-b-from-30%"
+            style={{
+              position: "relative",
+              zIndex: "1",
+            }}
+          >
+            <Image
+              src={serviceData.file}
+              alt=""
+              width={1000}
+              height={500}
+              className="rounded-xl"
+            />
+          </div>
+        </Link>
         <div
           style={{ fontFamily: "Aeonik" }}
           className="space-y-4 px-3 py-2 mt-6"
         >
-          <h2
-            style={{ fontSize: "clamp(1rem, 1.2vw, 2rem)" }}
-            className=" font-semibold tracking-wide"
-          >
-            {serviceData.title}
-          </h2>
+          <Link href={`/services/${serviceData.id}`}>
+            <h2
+              style={{ fontSize: "clamp(1rem, 1.2vw, 2rem)" }}
+              className=" font-semibold tracking-wide"
+            >
+              {serviceData.title}
+            </h2>
+          </Link>
           <div
             className="text-gray-500 tracking-wide pb-4"
             style={{ fontSize: "clamp(0.9rem, 1.1vw, 1.4rem)" }}

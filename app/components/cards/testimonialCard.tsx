@@ -75,7 +75,7 @@ export default function Testimonials({
         onMouseEnter={() => handleHover(true, anim1Ref)}
         onMouseLeave={() => handleHover(false, anim1Ref)}
       >
-        <div ref={row1Ref} className="flex  w-max gap-6 ">
+        <div ref={row1Ref} className="flex w-max gap-8 ">
           {[...Array(4)].map((_, idx) => (
             <TestimonialCard key={`r1-${idx}`} testimonials={testimonials} />
           ))}
@@ -88,7 +88,7 @@ export default function Testimonials({
         onMouseEnter={() => handleHover(true, anim2Ref)}
         onMouseLeave={() => handleHover(false, anim2Ref)}
       >
-        <div ref={row2Ref} className="flex w-max gap-6 ">
+        <div ref={row2Ref} className="flex w-max gap-8 ">
           {[...Array(3)].map((_, idx) => (
             <TestimonialCard key={`r2-${idx}`} testimonials={testimonials} />
           ))}
@@ -100,7 +100,7 @@ export default function Testimonials({
 
 const TestimonialCard = ({ testimonials }: { testimonials: Testimonials }) => (
   <section
-    className=" p-[1px] w-full h-fit  rounded-2xl flex gap-12 "
+    className=" p-[1px] w-full h-fit  rounded-2xl flex gap-8 "
     style={{
       background: "linear-gradient(to bottom, var(--color-white), transparent)",
     }}

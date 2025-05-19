@@ -3,9 +3,10 @@ import { serverFetch } from "../../../../libs/server-fetch";
 import { Copy, Link } from "lucide-react";
 import BlogBody from "./BlogBody";
 import { Metadata } from "next";
+import { BlogPost } from "../../components/types/blogsType";
 
 const BlogDetails = async ({ id }: { id: string }) => {
-  const filterBlog = (await serverFetch(`blog/${id}`)) as BlogPost;
+  const filterBlog = await serverFetch<BlogPost>(`blog/${id}`);
   if (!filterBlog) {
     return <div>No Details of that blog available</div>;
   }

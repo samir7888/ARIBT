@@ -4,6 +4,7 @@ import BlogDetails from "./components/BlogDetails";
 import { Metadata } from "next";
 import { serverFetch } from "../../../libs/server-fetch";
 import { Skeleton } from "@/components/components/ui/skeleton";
+import { BlogPost, BlogPostList } from "../components/types/blogsType";
 
 type Props = {
   params: {
@@ -18,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
 
-  const filterBlog = (await serverFetch(`blog/${id}`)) as BlogPost;
+  const filterBlog = (await serverFetch<BlogPost>(`blog/${id}`)) ;
 
   if (!filterBlog)
     return {
@@ -56,7 +57,7 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
 export default page;
 
 export async function generateStaticParams() {
-  const blogs = (await serverFetch("blog")) as BlogPost[];
+  const blogs = (await serverFetch("blog")) as BlogPostList;
   return blogs.map((d) => ({
     id: String(d.id),
   }));

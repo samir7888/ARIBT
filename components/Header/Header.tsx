@@ -2,6 +2,7 @@ import {  Mail } from "lucide-react";
 import React from "react";
 import Navbar from "./Navbar";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 function TopHeader() {
   return (
@@ -13,9 +14,15 @@ function TopHeader() {
         <p>Butwal 10, Tinkune</p>
       </div>
       <div className="flex items-center gap-2">
+        <Link href={'https://www.facebook.com/watch/abhyamrobotics/'} target="_blank">
         <FaFacebook className="text-white w-4" />
+        </Link>
+        <Link href={'https://www.linkedin.com/company/abhyam-robotics-institution-of-business-and-technology-aribt/posts/?feedView=all'} target="_blank">
         <FaLinkedin className="text-white w-4" />
+        </Link>
+        <Link href={'mailto:info@e-aribt.com'} target="_blank">
         <Mail className="text-white w-4" />
+        </Link>
       </div>
     </div>
   );

@@ -4,7 +4,32 @@ import Image from "next/image";
 import { serverFetch } from "../../../libs/server-fetch";
 import { Service } from "../Types/service-types";
 import ServiceBody, { ServiceBodyDetails } from "../components/ServicesBody";
+import { Metadata } from "next";
 
+
+
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+
+  const service = (await serverFetch<Service>(`category/${id}`)) ;
+
+  if (!service)
+    return {
+      title: "Blog Not Found",
+      description: "The requested blog does not exist.",
+    };
+
+  return {
+    title: `${service.title}`,
+    description: `Read what ${service.title} is`,
+  };
+}
 
 type Props = {
   params: {

@@ -19,7 +19,7 @@ const NavLinks = () => {
       <div className="relative group">
         <Link
           href="/services"
-          className="text-black font-medium  flex items-center"
+           className={isActive("/services")}
         >
           Services
         </Link>
@@ -27,7 +27,7 @@ const NavLinks = () => {
       <div className="relative group">
         <Link
           href="/portfolio"
-          className="text-gray-800 font-medium  flex items-center transition-colors"
+          className={isActive("/portfolio")}
         >
           Portfolio
         </Link>
@@ -44,12 +44,7 @@ const NavLinks = () => {
         {/* Dropdown for desktop */}
         <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
           <div className="py-1">
-            <Link
-              href="/companies"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            >
-              Our Companies
-            </Link>
+            
             <Link
               href="/teams"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"

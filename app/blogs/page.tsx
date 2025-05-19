@@ -4,25 +4,33 @@ import Blogs from "./components/Blogs";
 import FilterBlog from "./components/FilterBlog";
 import { Skeleton } from "@/components/components/ui/skeleton";
 
-type Props = {
+export type BlogsPageProps = {
   searchParams: {
-    search: string;
-    category: string;
+    search?: string;
+    category?: string;
   };
 };
 
 const page = async (props: {
-  searchParams: Promise<Props["searchParams"]>;
+  searchParams: Promise<BlogsPageProps["searchParams"]>;
 }) => {
-  const { search, category } = await props.searchParams;
+  const searchParams = await props.searchParams;
 
   return (
     <div className="min-h-screen mx-auto">
       <BlogHeroSection title="BLOGS" />
       <div className="container w-full md:w-3/5 mx-auto space-y-8 p-4 mt-14 font-aeonik">
         <FilterBlog />
-        <Suspense fallback={<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><SkeletonCard /><SkeletonCard /><SkeletonCard /></div>}>
-          <Blogs search={search} category={category} />
+        <Suspense
+          fallback={
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <SkeletonCard />
+              <SkeletonCard />
+              <SkeletonCard />
+            </div>
+          }
+        >
+          <Blogs searchParams={searchParams} />
         </Suspense>
       </div>
     </div>
@@ -30,8 +38,6 @@ const page = async (props: {
 };
 
 export default page;
-
-
 
 export function SkeletonCard() {
   return (
@@ -42,6 +48,5 @@ export function SkeletonCard() {
         <Skeleton className="h-4 w-[200px] bg-gray-200" />
       </div>
     </div>
-  )
+  );
 }
-

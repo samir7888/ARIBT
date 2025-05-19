@@ -26,7 +26,7 @@ const FooterCard = async () => {
     {/* Logo and description */}
     <div className="w-full md:w-1/4 space-y-5">
       <Image src={logo} alt="aribt logo" width={200} height={100} />
-      <p className="text-xl leading-relaxed">
+      <p className=" leading-relaxed">
         At Abhyam Robotics Institution of Business and Technology, we are
         dedicated to bringing your digital vision to life. Our expert team
         combines creativity and cutting-edge technology to deliver personalized
@@ -67,7 +67,7 @@ const FooterCard = async () => {
 
   {/* Footer bottom */}
   <div className="mt-10 border-t border-t-gray-300 text-sm text-gray-600 pt-6 flex flex-col items-center md:flex-row justify-between gap-4">
-    <p className="text-center">Copyright 2025 Sameer, All Rights Reserved</p>
+    <p className="text-center">Copyright © 2025, Abhyam Robotics institution of business and technology</p>
     <div className="flex flex-wrap justify-center gap-4">
       <p>Cookie Policy</p>
       <p>Privacy Policy</p>
