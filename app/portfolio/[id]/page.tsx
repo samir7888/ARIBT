@@ -40,19 +40,6 @@ export async function generateMetadata({
 const page = async (props: { params: Promise<Props["params"]> }) => {
   const { id } = await props.params;
   const portfolioDetails = await serverFetch<PortfolioList>(`portfolio/${id}`);
-  // if (!portfolioDetails) {
-  //   return (
-  //     <div className="min-h-screen mx-auto">
-  //       <BlogHeroSection title="Our Products" />
-  //       <WorkDivider />
-  //       <OverflowCard />
-  //       <div className="w-2/5 py-6 mx-auto">
-  //         <p>Portfolio details not found.</p>
-  //       </div>
-  //       <FooterSection />
-  //     </div>
-  //   );
-  // }
   
   return (
     <div className="min-h-screen mx-auto">
