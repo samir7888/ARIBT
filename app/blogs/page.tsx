@@ -39,7 +39,7 @@ const page = async (props: {
 
 export default page;
 
- function SkeletonCard() {
+function SkeletonCard() {
   return (
     <div className="flex flex-col space-y-3 ">
       <Skeleton className="h-[125px] max-w-[250px] rounded-xl bg-gray-200" />

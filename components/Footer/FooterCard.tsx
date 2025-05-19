@@ -18,7 +18,7 @@ const FooterCard = async () => {
     <div className="relative bg-white px-4 py-10 mt-28 rounded-t-3xl flex flex-col justify-between">
   {/* Background image */}
   <div
-    className="absolute inset-0 w-full bg-cover bg-center bg-no-repeat opacity-5 pointer-events-none"
+    className="absolute inset-0 rounded-t-3xl w-full bg-cover bg-center bg-no-repeat opacity-5 pointer-events-none"
     style={{ backgroundImage: `url(${logo.src})` }}
   ></div>
 
@@ -39,11 +39,13 @@ const FooterCard = async () => {
     <div className="w-full md:w-3/5 flex flex-col md:flex-row gap-10">
       <div className="flex flex-col sm:flex-row gap-8 w-full justify-around">
         <div className="space-y-3">
-          <h2 className="text-black text-xl font-semibold">About</h2>
-          <Link href="/testimonials" className="block">Testimonials</Link>
-          <a href="#" className="block">Examples</a>
-          <a href="#" className="block">Examples</a>
-          <a href="#" className="block">Examples</a>
+          <h2 className="text-black text-xl font-semibold">Quick Links</h2>
+          <Link href="/" className="block">Home</Link>
+          <Link href="/services" className="block">Our Services</Link>
+          <Link href="/portfolio" className="block">Portfolio</Link>
+          <Link href="/gallery" className="block">Gallery</Link>
+          <Link href="/blog" className="block">Blog</Link>
+          <Link href="/contact" className="block">Contact</Link>
         </div>
 
         <div className="space-y-3">
