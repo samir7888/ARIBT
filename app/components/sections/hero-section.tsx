@@ -61,7 +61,7 @@ const HeroSection = () => {
 
         {/* Image */}
         <div className="container mx-auto mt-8 ">
-          <Image src={photo1} alt="Hero Image" width={1600} height={800} />
+          <Image  priority src={photo1} alt="Hero Image" width={1600} height={800} />
         </div>
         <div className=" flex text-center  text-white my-4 text-2xl pb-8">
           <h2 style={{ fontFamily: "Aeonik" }}>
