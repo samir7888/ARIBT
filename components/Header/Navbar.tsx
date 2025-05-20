@@ -39,7 +39,7 @@ export default async function Navbar() {
           <Link href='/contact'>
           <button className="hidden group md:flex bg-brand text-white w-40  h-13 pl-8 items-center  rounded-full border   duration-600  border-brand hover:bg-brand-primary font-aeonik cursor-pointer ">
             Contact Us
-            <ChevronRight className=" group-hover:translate-x-2 transition-transform" />
+            <ChevronRight className=" group-hover:translate-x-2 transition-transform duration-600" />
           </button>
           </Link>
 
