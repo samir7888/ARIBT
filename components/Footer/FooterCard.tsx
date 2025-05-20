@@ -46,7 +46,7 @@ const FooterCard = async () => {
 
 
 
-          <div className="flex w-full justify-around ">
+          <div className="flex w-full md:justify-around ">
             <div className="space-y-3">
               <h2 className="text-black text-xl">Quick Links</h2>
               <Link href="/" className="block">
