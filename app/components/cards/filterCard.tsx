@@ -64,7 +64,7 @@ export default function Frame({
   }
   return (
     <Card
-      className={`p-1 rounded-full tracking-wide font-normal   ${
+      className={`p-1 rounded-full tracking-wide font-normal border border-gray-300   ${
         isProduct ? "bg-brand-primary" : "bg-gray-200"
       }`}
     >
