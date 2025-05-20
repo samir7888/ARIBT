@@ -11,9 +11,9 @@ if (!portfolios) {
 }
   return (
     <div className="container mx-auto py-15">
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {(portfolios).map((work) => (
-          <PortfolioCard  work={work} />
+          <PortfolioCard key={work.id}  work={work} />
         ))}
       </div>
     </div>

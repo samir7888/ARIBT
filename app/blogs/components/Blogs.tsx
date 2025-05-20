@@ -89,8 +89,8 @@ export default async function Blogs({ searchParams }: BlogsPageProps) {
             </div>
           ))}
       </div>
-
-      <BlogPagination />
+         {/* no need pagination for now */}
+      {/* <BlogPagination /> */}
     </div>
   );
 }

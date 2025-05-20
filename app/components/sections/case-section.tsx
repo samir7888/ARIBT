@@ -44,7 +44,7 @@ const CaseStudySection = () => {
               improving efficiency, communication, and education outcomes.
             </p>
           </div>
-          <Link href={"products"} className="  inline-block">
+          <Link href={"services"} className="  inline-block">
             <ButtonEffect2 />
           </Link>
         </div>

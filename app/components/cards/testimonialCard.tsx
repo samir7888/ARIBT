@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 import type {
   Testimonial,
   Testimonials,
-} from "../../testimonials/components/Types/TestimonialsTypes";
+} from "../../testimonials/Types/TestimonialsTypes";
 import BlogBody from "../../blogs/[id]/components/BlogBody";
 import TestimonialBody from "./TestimonialBody";
 

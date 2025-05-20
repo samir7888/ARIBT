@@ -118,7 +118,7 @@ const page = async(props: { params: Promise<Props["params"]> }) => {
                 </div>
         </div>
       </div>
-        <div className="mb-8 ">
+        <div className="mb-8 p-1 ">
             <ServiceBodyDetails description={services?.description || ''} />
           </div>
     </div>

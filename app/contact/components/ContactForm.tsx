@@ -343,7 +343,7 @@ const ContactForm = () => {
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full bg-teal-800 hover:bg-teal-900 text-white py-6 font-medium rounded-full flex items-center justify-center gap-2"
+            className="w-full bg-teal-800 hover:bg-teal-900 text-white py-6 font-medium rounded-full flex items-center justify-center gap-2 cursor-pointer"
           >
             Contact Us
             <ChevronRight size={16} />

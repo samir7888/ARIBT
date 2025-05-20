@@ -12,7 +12,7 @@ const ContactDetails = ({ contact }: { contact: ContactInfo }) => {
   
   return (
     <div className="space-y-5">
-      <h2 className="text-black">Get in touch</h2>
+      <h2 className="text-black text-xl   ">Get in touch</h2>
       <p className="flex gap-3">
         <span className="shrink-0">
           <Phone />

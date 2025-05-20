@@ -1,6 +1,5 @@
 import React from "react";
 import BlogHeroSection from "../blogs/components/BlogHeroSection";
-import FooterSection from "../../components/Footer/FooterSection";
 import TeamsCard from "../../components/TeamsCard";
 import ButtonEffect1 from "../../components/Buttons/ButtonEffect1";
 
@@ -15,7 +14,6 @@ const page = () => {
         <TeamsCard />
         <ButtonEffect1 word="Explore All" />
       </div>
-      <FooterSection />
     </div>
   );
 };

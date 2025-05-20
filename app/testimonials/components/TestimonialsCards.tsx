@@ -1,19 +1,17 @@
-
 import { FaFacebook } from "react-icons/fa";
 import Image from "next/image";
-import { Testimonial } from "./Types/TestimonialsTypes";
+import { Testimonial } from "../Types/TestimonialsTypes";
 import BlogBody from "../../blogs/[id]/components/BlogBody";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <section
     className="p-[1px] rounded-2xl h-auto"
     style={{
-      background: "linear-gradient(to bottom, var(--color-gray-100), transparent)",
+      background:
+        "linear-gradient(to bottom, var(--color-gray-100), transparent)",
     }}
   >
-    <div
-      className="flex flex-col p-4 bg-white rounded-[calc(var(--radius-2xl)-3px)] w-full h-full"
-    >
+    <div className="flex flex-col p-4 bg-white rounded-[calc(var(--radius-2xl)-3px)] w-full h-full">
       {/* Top Section */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
@@ -29,14 +27,6 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
             <p className="text-sm text-gray-500">{testimonial.position}</p>
           </div>
         </div>
-        {/* <a
-          href={testimonial.social}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-blue-600 transition"
-        >
-          <FaFacebook size={28} />
-        </a> */}
       </div>
 
       {/* Message */}
@@ -44,14 +34,10 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
         style={{ fontSize: "clamp(0.7rem, 0.9vw, 1rem)" }}
         className="mt-5 text-sm text-brand-primary leading-relaxed"
       >
-        <BlogBody description={testimonial.description}/>
-        
+        <BlogBody description={testimonial.description} />
       </div>
     </div>
   </section>
 );
-
-
-
 
 export default TestimonialCard;

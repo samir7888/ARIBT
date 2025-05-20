@@ -1,11 +1,10 @@
+import TitleCard from "../cards/titleCard";
+import Testimonials from "../cards/testimonialCard";
+import { serverFetch } from "../../../libs/server-fetch";
+import { Testimonials as TestimonialTypes } from "../../testimonials/Types/TestimonialsTypes";
 
-import TitleCard from '../cards/titleCard';
-import Testimonials from '../cards/testimonialCard';
-import { serverFetch } from '../../../libs/server-fetch';
-import { Testimonials as TestimonialTypes} from '../../testimonials/components/Types/TestimonialsTypes';
-
-const testimonials = async() => {
-  const testimonials = await serverFetch<TestimonialTypes>('/testonomial');
+const testimonials = async () => {
+  const testimonials = await serverFetch<TestimonialTypes>("/testonomial");
   return (
     <div className="relative overflow-hidden my-12 bg-white space-y-10">
       <TitleCard
@@ -14,10 +13,8 @@ const testimonials = async() => {
         sectionTitle="What our Client Says?"
       />
       <Testimonials testimonials={testimonials ?? []} />
-    </div> 
+    </div>
   );
 };
 
 export default testimonials;
-
-

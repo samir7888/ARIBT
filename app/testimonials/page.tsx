@@ -1,8 +1,7 @@
 import React from "react";
 import BlogHeroSection from "../blogs/components/BlogHeroSection";
-import FooterSection from "../../components/Footer/FooterSection";
 import { serverFetch } from "../../libs/server-fetch";
-import { Testimonials } from "./components/Types/TestimonialsTypes";
+import { Testimonials } from "./Types/TestimonialsTypes";
 import TestimonialCard from "./components/TestimonialsCards";
 
 const page = async () => {
@@ -28,7 +27,6 @@ const page = async () => {
           </div>
         </div>
       </div>
-      <FooterSection />
     </div>
   );
 };

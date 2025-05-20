@@ -1,11 +1,16 @@
 import { ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/logo.png";
 import MobileView from "./MobileView";
 import NavLinks from "./Navlinks";
+import { LogoList } from "../Footer/components/footer-types";
+import { serverFetch } from "../../libs/server-fetch";
 
-export default function Navbar() {
+export default async function Navbar() {
+    const logoDetails = await serverFetch<LogoList>("logo");
+    if (!logoDetails) {
+      return <div>No logo available</div>
+    }
   return (
     <nav
       style={{ fontFamily: "Noir", zIndex: "1000" }}
@@ -17,7 +22,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="text-lg font-bold ">
               <Image
-                src={logo}
+                src={`${logoDetails[0].colorImage}`}
                 width={70}
                 height={70}
                 alt="ARIBT"

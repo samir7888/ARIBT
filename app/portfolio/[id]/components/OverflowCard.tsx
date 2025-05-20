@@ -1,5 +1,4 @@
 import React from "react";
-import AcademyHeroSection from "./AcademyHero";
 import { PortfolioList } from "../../Types/portfolio-types";
 import Link from "next/link";
 

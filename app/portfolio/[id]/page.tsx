@@ -46,7 +46,7 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
       <BlogHeroSection title="Our Products" />
       <WorkDivider portfolio={portfolioDetails || []} />
       <OverflowCard portfolio={portfolioDetails || []} />
-      <div className="w-2/5 py-6 mx-auto">
+      <div className="w-full p-1 md:w-2/5 py-6 mx-auto">
         <PortfolioDetails portfolio={portfolioDetails || []} />
       </div>
     </div>

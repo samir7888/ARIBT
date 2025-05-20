@@ -38,14 +38,14 @@ export default function PortfolioCard({
             )}
           />
         </Link>
-        <div className="absolute hidden sm:block left-4 right-4 h-auto bottom-4 bg-white shadow-sm rounded-xl p-4">
+        <div className="absolute  left-4 right-4 h-fit bottom-4 bg-white shadow-sm rounded-xl  md:p-4 p-1">
           <div className="flex items-center mb-4">
             <div className="mr-auto">
               <Link href={`/portfolio/${work?.id}`}>
-              <h3 className="font-semibold text-sm md:text-xl ">{work.title}</h3>
+              <h3 className="font-semibold text-xs md:text-xl ">{work.title}</h3>
               </Link>
               {work.createdAt && (
-                        <p className="text-brand-primary">{work.year}</p>
+                        <p className="text-brand-primary ">{work.year}</p>
                       )}
 
               {/* <div className="flex items-center flex-wrap gap-2 text-gray-400">

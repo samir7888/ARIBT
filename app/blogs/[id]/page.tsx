@@ -56,12 +56,7 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
 
 export default page;
 
-// export async function generateStaticParams() {
-//   const blogs = (await serverFetch("blog")) as BlogPostList;
-//   return blogs.map((d) => ({
-//     id: String(d.id),
-//   }));
-// }
+
 
 function SkeletonCard() {
   return (

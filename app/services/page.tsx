@@ -1,7 +1,6 @@
 import React from "react";
 import BlogHeroSection from "../blogs/components/BlogHeroSection";
 import ProductBody from "./components/ProductBody";
-import FooterSection from "../../components/Footer/FooterSection";
 
 import { serverFetch } from "../../libs/server-fetch";
 import { ServiceList } from "./Types/service-types";
@@ -19,7 +18,6 @@ const page = async () => {
             <ServiceCards key={service.id} serviceData={service} />
           ))}
       </div>
-      <FooterSection />
     </div>
   );
 };

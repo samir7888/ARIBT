@@ -49,81 +49,77 @@ const MobileView = () => {
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="absolute top-16 left-4 right-4 md:hidden bg-white shadow-lg border border-gray-200 p-4 rounded-xl mt-2 z-50">
-          <div className="flex flex-col space-y-3">
-            <a
-              href="#"
-              className="text-gray-800 font-medium hover:text-teal-600 py-2 transition-colors"
-            >
-              Home
-            </a>
-
-            {/* Mobile dropdown menu items */}
-            <div className="relative group">
+          <div className="flex flex-col space-y-4">
+            <div>
               <Link
-                href="/products"
+                href="/"
                 className="text-black font-medium justify-between  flex items-center"
-              >
-                Products
+                onClick={() => setIsMenuOpen(false)}
+               >
+                Home
               </Link>
-            
             </div>
 
-            <div className="relative group">
+            {/* Mobile dropdown menu items */}
+            <div className="">
+              <Link
+                href="/services"
+                className="text-black font-medium justify-between  flex items-center"
+                 onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
+            </div>
+
+            <div className="">
               <Link
                 href="/portfolio"
-                className="text-gray-800 font-medium  flex items-center justify-between transition-colors"
+                className="text-black font-medium justify-between  flex items-center"
+                 onClick={() => setIsMenuOpen(false)}
               >
                 Portfolio
               </Link>
-             
             </div>
 
-            <div className="relative group ">
+            <div>
               <Link
-                href="#"
-                className="text-gray-800 font-medium flex items-center transition-colors justify-between "
+                href="/teams"
+                className="text-black font-medium justify-between  flex items-center"
+                 onClick={() => setIsMenuOpen(false)}
               >
-                Why Us
-                <ChevronDown className="group-hover:hidden ml-1  mb-1" />
-                <ChevronUp className="hidden group-hover:inline ml-1 mb-1" />
+                Teams
               </Link>
-              {/* Dropdown for desktop */}
-              <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <div className="py-1">
-                  <Link
-                    href="/companies"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Our Companies
-                  </Link>
-                  <Link
-                    href="/teams"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Our Team
-                  </Link>
-                  <Link
-                    href="/testimonials"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Testimonials
-                  </Link>
-                  <Link
-                    href="/gallery"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Gallery
-                  </Link>
-                </div>
-              </div>
             </div>
 
-            <Link
-              href="/blogs"
-              className="text-gray-800 font-medium hover:text-teal-600 py-2 transition-colors"
-            >
-              Blogs
-            </Link>
+            <div>
+              <Link
+                href="/gallery"
+                className="text-black font-medium justify-between  flex items-center"
+                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                Gallery
+              </Link>
+            </div>
+
+            <div>
+              <Link
+                href="/testimonials"
+                className="text-black font-medium justify-between  flex items-center"
+                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                Testimonial
+              </Link>
+            </div>
+
+            <div>
+              <Link
+                href="/blogs"
+                className="text-black font-medium justify-between  flex items-center"
+                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                Blogs
+              </Link>
+            </div>
 
             {/* Contact Us Button (Mobile) */}
             <div className="pt-2">
