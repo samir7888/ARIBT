@@ -1,7 +1,7 @@
 import React from "react";
 import hero from "../../../public/hero.png";
 import Image from "next/image";
-import photo1 from "../../../public/Property 1=Variant2.png";
+import photo1 from "../../../public/secondHeroImage.png";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
