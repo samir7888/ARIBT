@@ -23,7 +23,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
             className="rounded-2xl object-cover aspect-square"
           />
           <div>
-            <h4 className="text-md text-gray-800">{testimonial.name}</h4>
+            <h4 className="text-2xl text-gray-800">{testimonial.name}</h4>
             <p className="text-sm text-gray-500">{testimonial.position}</p>
           </div>
         </div>

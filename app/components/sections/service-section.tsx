@@ -26,7 +26,7 @@ const ServicesSection = async ({
       />
 
       {/* Services Grid */}
-      <div className="grid grid-rows-1 md:grid-rows-2 gap-10 bg-gradient-to-b from-gray-50 to-transparent">
+      <div className="grid grid-rows-1 md:grid-rows-2 gap-10 bg-gradient-to-b from-white to-transparent">
         <div className=" h-fit grid grid-cols-1 md:grid-cols-2 gap-6  ">
           {/* card */}
           <BorderImage serviceData={services[0]} />
