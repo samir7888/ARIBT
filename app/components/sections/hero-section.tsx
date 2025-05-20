@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "../../../public/hero.png";
+import hero from "../../../public/hero.webp";
 import Image from "next/image";
 import photo1 from "../../../public/secondHeroImage.png";
 import { ChevronRight } from "lucide-react";
