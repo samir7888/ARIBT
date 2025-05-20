@@ -45,8 +45,6 @@ export default function Frame({
         width: `${offsetWidth}px`,
       });
     }
-    console.log(activeElement?.innerText)
-
   }, [activeIndex]);
 
   useEffect(() => {

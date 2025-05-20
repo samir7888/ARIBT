@@ -67,7 +67,7 @@ const ContactForm = () => {
   }
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
+   
     // Handle form submission here
   };
   return (

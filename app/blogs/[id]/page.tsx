@@ -56,8 +56,6 @@ const page = async (props: { params: Promise<Props["params"]> }) => {
 
 export default page;
 
-
-
 function SkeletonCard() {
   return (
     <div className="flex flex-col space-y-3 ">
@@ -68,4 +66,13 @@ function SkeletonCard() {
       </div>
     </div>
   );
+}
+
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const posts = (await serverFetch<BlogPostList>(`/blog`)) || [];
+
+  return posts.map((post) => ({
+    id: post.id,
+  }));
 }

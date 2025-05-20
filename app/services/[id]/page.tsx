@@ -2,7 +2,7 @@ import React from "react";
 import BlogHeroSection from "../../blogs/components/BlogHeroSection";
 import Image from "next/image";
 import { serverFetch } from "../../../libs/server-fetch";
-import { Service } from "../Types/service-types";
+import { Service, ServiceList } from "../Types/service-types";
 import ServiceBody, { ServiceBodyDetails } from "../components/ServicesBody";
 import { Metadata } from "next";
 
@@ -41,7 +41,7 @@ type Props = {
 const page = async(props: { params: Promise<Props["params"]> }) => {
   const {id} =await props.params;
   const services = await serverFetch<Service>(`category/${id}`);
-  console.log(services)
+
   return (
     <div className="min-h-screen mx-auto font-aeonik">
       <BlogHeroSection title="Our Services" />
@@ -126,3 +126,13 @@ const page = async(props: { params: Promise<Props["params"]> }) => {
 };
 
 export default page;
+
+
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const services = (await serverFetch<ServiceList>("category")) || [];
+
+  return services.map((service) => ({
+    id: service.id,
+  }));
+}

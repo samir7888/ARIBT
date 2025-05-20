@@ -59,9 +59,11 @@ export default page;
 
 
 
-// export async function generateStaticParams() {
-//   const portfolio = (await serverFetch(`portfolio`)) as PortfolioList[];
-//   return portfolio.map((d) => ({
-//     id: String(d[0].id),
-//   }));
-// }
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const portfolios = (await serverFetch<PortfolioList>(`portfolio`)) || [];
+
+  return portfolios.map((post) => ({
+    id: post.id,
+  }));
+}
