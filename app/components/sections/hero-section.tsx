@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen  -mt-[100px]">
+    <div className="relative min-h-screen  -mt-[107px]">
       {/* Background image - fixed to cover entire section */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat "
