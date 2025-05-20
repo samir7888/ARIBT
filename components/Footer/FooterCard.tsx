@@ -42,7 +42,11 @@ const FooterCard = async () => {
 
         {/* Links and Contacts */}
         <div className="w-full md:w-3/5 flex flex-col md:flex-row gap-10">
-          <div className="flex  w-full ">
+
+
+
+
+          <div className="flex w-full justify-around ">
             <div className="space-y-3">
               <h2 className="text-black text-xl">Quick Links</h2>
               <Link href="/" className="block">
@@ -68,7 +72,7 @@ const FooterCard = async () => {
          
           </div>
 
-          <div className="mt-6 md:mt-0">
+          <div className="mt-6 md:mt-0 w-[85%]">
             <Suspense>
               {ContactsInfo.map((contact) => (
                 <ContactDetails key={contact.id} contact={contact} />
