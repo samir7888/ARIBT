@@ -8,7 +8,7 @@ function TopHeader() {
   return (
     <div className="w-full font-aeonik min-h-9 bg bg-linear-to-r from-[#04413D] to-[#069188] pb-3 px-9 flex items-center justify-between z-1000">
       <div
-        className="text-white flex   text-sm gap-2"
+        className="text-white flex text-sm gap-2"
       >
         <p>Abhyam Robotics</p>
         <p>Butwal 10, Tinkune</p>
